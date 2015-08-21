@@ -1,0 +1,177 @@
+import numpy
+
+class Linse (object):
+    """
+    Calculate all lens correlated Values
+    Values needed for Calculation:
+    --Input Values: energy, R, R_0, delta, mu, density, N, d, rough, W
+    """
+
+    def __init__(self):
+        
+        #self.calc(inVal, outVal)
+
+        """Input Fachwerte"""
+        # R >> Radius of curvature
+        # R_0 >> Lens aperture
+        # delta >> index of refraction: real part
+        # mu >> index of refraction: imaginary part
+        # N >> Number of lenses
+        # d >> lens thickness at the tightest point
+        # rough >> surface roughness of lens
+        # energy >> light energy
+        # W >> lens total thickness along beam axis
+        
+        """Output Fachwerte"""
+        # f >> uncorrelated focal length 
+        # f_corr >> correlated focal length >> 'f'
+        # T >> Transmission per area >> 'T'
+        # Tr >> all-of-lens transmission
+        # a >> transmission exponent
+        # a_eff >> effective aperture for absorption
+        # D_eff >> effective aperture for diffraction and roughness >> 'Deff'
+        # sigma >> cross section of the focus >> 'CrossSection'
+        
+
+
+    def calc(self, inVal, outVal):
+        """
+        calculate lens parameters. f, T, Tr, a, a_eff, D_eff, sigma
+        Returns True if all parameters have been calulated
+        """
+        
+        if (inVal==None or outVal==None):
+            return False
+        
+        # local input variables for shorter calls
+        energy = inVal.getValue('energy')
+        R = inVal.getValue('R')
+        R_0 = inVal.getValue('R_0')
+        #TODO nachfragen
+        delta = inVal.getValue('delta') * inVal.getValue('density')
+        mu = inVal.getValue('mu') * inVal.getValue('density')
+        N = inVal.getValue('N')
+        d = inVal.getValue('d')
+        rough = inVal.getValue('rough')
+        W = inVal.getValue('W')
+        
+        #local output variables for shorter call
+        f = self.getf_corr(R, N, delta, W)
+        H = self.getH(N, W, R, delta)
+        Deff = self.getD_eff(mu, N, R, R_0, delta, rough, energy)
+        T_p = self.getT(mu, N, R_0, R, d)
+        CrossSection = self.getsigma(mu, N, R_0, R, d)
+        
+        
+        # set output Values and return True if set sucessful
+        if (
+            outVal.setValue('f',f) and
+            outVal.setValue('H', H) and # Wert muss noch ueberprueft werden
+            outVal.setValue('Deff', Deff) and
+            outVal.setValue('T_p',T_p) and
+            outVal.setValue('CrossSection', CrossSection)
+            ):
+            return True
+        else:
+            return False
+        
+        
+        
+        
+    # intermediate Methods
+        
+    def getAp(self, mu, N, R_0, R):
+        assert (R!=0), "R = 0 leads to division by zero"
+        return mu * N * R_0**2 / 2. / R
+    
+    def gete2k(self, energy):
+        return 2 * numpy.pi * energy / 12398.52 * 10**7
+    
+    def getDeff_part(self, mu, N, R, delta, rough, energy):
+        e2k = self.gete2k(energy)
+        return mu * N * R + 2*N*(e2k * delta * rough)**2
+    
+    # ---Methods---
+        
+    def getf(self, R, N, delta):
+        assert (N!=0), "N = 0 leads to division by zero"
+        assert (delta!=0), "delta = 0 leads to division by zero"
+        #TODO: delta ohne dichte-normierung oder mit
+        return R/(2. * N * delta)
+    
+    def getf_corr(self, R, N, delta, W):
+        f = self.getf(R, N, delta)
+        assert (f!=0), "f = 0 leads to division by zero"
+        assert (N**2 != 1 + 1/W), "Bad Luck, Choice of N and W leads to division by zero"
+        return f / ( 1 - W * (N**2-1) / (6. * f * N ) )
+    
+    # TODO: stimmt das?
+    def getH(self, N, W, R, delta):
+        f = self.getf(R, N, delta)
+        assert (f!=0), "f=0 leads to division by zero"
+        #TODO: 1W oder 2W klaeren
+        L = N * W
+        return - L**2 / f / 24
+    
+    def getT(self, mu, N, R_0, R, d):
+        a_p = self.getAp(mu, N, R_0, R)
+        assert (a_p!=0), "a_p-Value = 0 leads to division by zero "
+        return float( (numpy.exp(-mu * N * d) * (1 - numpy.exp(-2 * a_p)) / a_p) )
+        
+    def getTr(self, mu, N, R_0, R, d):
+        return self.getT(mu, N, R_0, R, d) * numpy.pi * R_0**2
+    
+    def geta(self, mu, N, R_0, R):
+        return self.getAp(mu, N, R_0, R)
+    
+    def geta_eff(self, mu, N, R_0, R):
+        a_p = self.getAp(mu, N, R_0, R)
+        assert(a_p<0), "negative a_p-Value leads imaginary result"
+        assert(mu>0), "mu has to be greater than zero"
+        assert(N>0), "N has to be greater than zero"
+        assert(R>=0), "R needs to be positive"
+        return 2 * float( numpy.sqrt( R / mu / N *  (1 - numpy.exp(-a_p)) ) )
+    
+    def getD_eff(self, mu, N, R, R_0, delta, rough, energy):
+        deff_part = self.getDeff_part(mu, N, R, delta, rough, energy)
+        assert (deff_part>0), "deff_part has to be greater than zero"
+        assert (R>=0), "R shall not be negative"
+        return 2 * float( numpy.sqrt(2*R**2 / deff_part * (1 - numpy.exp(-deff_part / 2. * (R_0/R)**2)) ) )
+    
+    def getsigma(self, mu, N, R_0, R, d):
+        T = self.getT(mu, N, R_0, R, d)
+        return numpy.pi * R_0**2 * T
+                                    
+    # get methods for important values
+    def getR_0Lock(self, R, W, d):
+        assert (W>=d), "negative squareroot due to W<d"
+        return float(numpy.sqrt(R*(W-d)))                                                                        
+
+    """
+        #support functions
+        a_p = self.mu * self.N * self.R_0**2 / 2. / self.R
+        e2k = 2 * numpy.pi * self. energy / 12398.52
+        deff_part = self.mu * self.N * self.R + (e2k * self.delta * self.rough)**2
+        
+        
+        #calculate output values
+        self.f = self.R/(2. * self.N * self.delta)
+        self.f_corr = self.f / ( 1 - self.W * (self.N**2-1) / (6. * self.f * self.N ) )
+        self.T = (numpy.exp(-self.mu * self.N * self.d) *
+                  (1 - numpy.exp(-2 * a_p)) / a_p)
+        self.Tr = self.T * numpy.pi * self.R_0**2
+        self.a = a_p
+        self.a_eff = 2 * numpy.sqrt(self.R / self.mu / self.N *
+                                    (1 - numpy.exp(-a_p))
+                                    )
+        self.D_eff = 2 * numpy.sqrt(2*self.R**2 / deff_part /
+                                    numpy.exp(-deff_part * (self.R_0/self.R)**2 / 2.)
+                                    )
+        self.sigma = numpy.pi * self.R_0**2 * self.T
+
+        # special functions
+        number = numpy.round(self.R / (2. * self.f * self.delta) )
+        self.R_f = ( (number == 0.) + number ) * 2. * self.f * self.delta
+        self.N_f = (number == 0.) + number
+        
+    """
