@@ -1,3 +1,9 @@
+'''
+Created on 2.06.2015
+
+@author: Woehnert
+'''
+
 import linse
 import numpy
 
@@ -5,8 +11,6 @@ class Abbildungsgeometrie(object):
 
     def __init__(self):
         pass
-        
-        #self.calc(inVal, outVal)
 
 #         self.b_v = b_v  # Image size vertical
 #         self.b_h = b_h  # Image size horizontal
@@ -16,8 +20,6 @@ class Abbildungsgeometrie(object):
 #         self.intensity = intensity  # intensity before lens
 #         self.delta = delta  # index of refraction: real part
 #         self.mu = mu  # index of refraction: imaginary part
-#         
-#         self.calc()
 
 
         # self.gain >> gain >> 'gain'
@@ -49,14 +51,6 @@ class Abbildungsgeometrie(object):
 
     # TODO: Corr und Uncorr trennen -> reduzierung der Zustandsfelder um 50%
     def calc(self, inVal, outVal):
-        
-            
-        """
-        TODO:
-        Warum wird bei der Linse abgebrochen beim output setzen
-        Deshalb ensteht der Fehler hier, weil Deff = 0
-        
-        """
         
         # used input Values
         energy = inVal.getValue('energy')
@@ -101,37 +95,6 @@ class Abbildungsgeometrie(object):
             return True
         else:
             return False
-        
-        
-
-#         self.gain_corr = self.calcGain(self.linse.R_0, self.linse.f_corr,
-#                                   self.linse.T, self.g, self.b_v, self.b_h
-#                                   )
-#         self.gain = self.calcGain(self.linse.R_0, self.linse.f,
-#                                   self.linse.T, self.g, self.b_v, self.b_h
-#                                   )
-#         self.flux = self.linse.sigma * self.intensity
-#         self.bgv_corr = self.calcImageSize(self.linse.f_corr, self.g, self.b_v)
-#         self.bgh_corr = self.calcImageSize(self.linse.f_corr, self.g, self.b_h)
-#         self.bgv = self.calcImageSize(self.linse.f_corr, self.g, self.b_v)
-#         self.bgh = self.calcImageSize(self.linse.f_corr, self.g, self.b_h)
-#         
-#         self.imDistance_corr = self.calcImDist(self.linse.f_corr, self.g) # L2
-#         self.imDistance = self.calcImDist(self.linse.f, self.g)
-#         
-#         self.ds_corr = self.FWHM(2 / self.E2k(self.linse.energy) * self.imDistance_corr / 
-#                                  self.linse.D_eff
-#                                  )
-#         self.ds = self.FWHM(2 / self.E2k(self.linse.energy) * self.imDistance / 
-#                                  self.linse.D_eff
-#                                  )
-#         
-#         self.mag_corr = self.calcmag(self.g, self.linse.f_corr)
-#         self.mag = self.calcmag(self.g, self.linse.f)
-#         self.wavelength = self.calcLambda(self.linse.energy)
-#         self.effectivity = (self.linse.R_0 / self.g) ** 2 * self.linse.T / 4.
-#         self.NA_corr = self.calcNA(self.linse.D_eff, self.imDistance_corr)
-#         self.NA = self.calcNA(self.linse.D_eff, self.imDistance)
         
 
     def getgain_corr(self, R_0, f_corr, T, g, b_v, b_h):

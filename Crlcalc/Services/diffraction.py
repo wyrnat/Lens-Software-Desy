@@ -5,7 +5,6 @@ Created on 16.07.2015
 '''
 
 import numpy
-#from abbildungsgeometrie import Abbildungsgeometrie
 
 class Diffraction(object):
     '''
@@ -16,8 +15,7 @@ class Diffraction(object):
     --Output Values: diff_limit_corr, bgv_corr, bgh_corr, NA_corr
     --Abbildungsgeometrie: diff_limit (uncorrelated)
     
-    Returned Values:
-    
+    Returned Values: dof, mb_dof, Isv_corr, ISh_corr, gain_corr
     '''
 
 
@@ -32,7 +30,6 @@ class Diffraction(object):
         # used input values
         R_0 = inVal.getValue('R_0')
         
-        
         #TODO: klaeren, wann diff_limit_corr und wann diff_limit
         diff_limit_corr = outVal.getValue('diff_limit')
         bgv_corr = outVal.getValue('ISv')
@@ -40,16 +37,6 @@ class Diffraction(object):
         NA_corr = outVal.getValue('NA')
         T = outVal.getValue('T_p')
         
-#         #TODO: ersetzen
-#         diff_limit = Abbildungsgeometrie.getdiff_limit(energy, g, Deff, R, N, delta)
-#         
-#         
-#         # values from abbildungsgeometrie
-#         abbgeo = Abbildungsgeometrie()
-#         bgv = abbgeo.getbgv(f, g, b_v)
-#         bgh = abbgeo.getbgh(f, g, b_h)
-        
-        #TODO setze heute (4.8) diff_limit auf diff_limit_corr, muss geklaert werden
         dof = self.getDOF_corr(diff_limit_corr, NA_corr)
         mb_dof = self.getDOF_Microbeam_corr(diff_limit_corr, bgh_corr, bgv_corr, NA_corr)
         ISv_corr = self.getBbgv_corr(diff_limit_corr, bgv_corr)
@@ -67,35 +54,7 @@ class Diffraction(object):
         else:
             return False
                                
-        
-#         self.Bbgv_corr = numpy.sqrt(self.ds ** 2 + self.bgv_corr ** 2)
-#         self.Bbgh_corr = numpy.sqrt(self.ds ** 2 + self.bgh_corr ** 2)
-#         self.Bbgv = numpy.sqrt(self.ds ** 2 + self.bgv ** 2)
-#         self.Bbgh = numpy.sqrt(self.ds ** 2 + self.bgh ** 2)
-#         
-#         self.BbgvDpsf_corr = numpy.sqrt(self.ds ** 2 + self.bgv_corr ** 2 + self.dpsf ** 2)
-#         self.BbghDpsf_corr = numpy.sqrt(self.ds ** 2 + self.bgh_corr ** 2 + self.dpsf ** 2)
-#         self.BbgvDpsf = numpy.sqrt(self.ds ** 2 + self.bgv ** 2 + self.dpsf ** 2)
-#         self.BbghDpsf = numpy.sqrt(self.ds ** 2 + self.bgh ** 2 + self.dpsf ** 2)
-# 
-#         self.Bgain_corr = self.calcBGain(self.linse.R_0, self.linse.T,
-#                                     self.Bbgv_corr, self.Bbgh_corr)
-#         self.Bgain = self.calcBGain(self.linse.R_0, self.linse.T,
-#                                     self.Bbgv, self.Bbgh)
-#         self.BgainDpsf_corr = self.calcBGain(self.linse.R_0, self.linse.T,
-#                                     self.BbgvDpsf_corr, self.BbghDpsf_corr)
-#         self.BgainDpsf = self.calcBGain(self.linse.R_0, self.linse.T,
-#                                     self.BbgvDpsf, self.BbghDpsf)
-#         
-#         self.DOF_corr = 4 * self.calcRMS(self.ds_corr / self.NA_corr)
-#         self.DOF = 4 * self.calcRMS(self.ds / self.NA)
-#         self.DOF_Microbeam_corr = 4 * self.calcRMS_u(self.NA_corr, self.Bbgv_corr,
-#                                                  self.Bbgh_corr
-#                                                  )
-#         self.DOF_Microbeam = 4 * self.calcRMS_u(self.NA, self.Bbgv,
-#                                                  self.Bbgh
-#                                                  )
-    
+
     """Help Methods"""
         
     def calcBGain(self, R_0, T, Bbgv, Bbgh):

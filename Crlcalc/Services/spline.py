@@ -1,5 +1,12 @@
+'''
+Created on 24.06.2015
+
+@author: Woehnert
+'''
+
 import os
 import string
+from scipy import interpolate
 
 class SpLine(object):
     '''
@@ -117,9 +124,19 @@ class SpLine(object):
         """
         interface for calculating delta mu values from Combobox choice and energy
         """
-        delta = self.calcLinearSpline(inVal.getValue('energy'), self.delta_values) / inVal.getValue('density')
-        mu = self.calcLinearSpline(inVal.getValue('energy'), self.mu_values) / inVal.getValue('density')
-
+        #delta = self.calcLinearSpline(inVal.getValue('energy'), self.delta_values)
+        #mu = self.calcLinearSpline(inVal.getValue('energy'), self.mu_values)
+        
+        delta = self.calcCubicSpline(inVal.getValue('energy'),
+                                     self.energy_values,
+                                     self.delta_values
+                                     )
+        mu = self.calcCubicSpline(inVal.getValue('energy'),
+                                  self.energy_values,
+                                  self.mu_values
+                                  )
+         
+        # returns True, if both values were set successful
         return ( inVal.setValue('delta', delta) and inVal.setValue('mu', mu ) )
         
         
@@ -139,7 +156,9 @@ class SpLine(object):
     
     def calcLinearSpline(self, x, value_list):
         """
-        returns the interpolated Output Value out of lists of Fachwerte for given Energy with linear Spline.
+        For a non-scipy enviroment:
+        returns the interpolated Output Value out of lists of Fachwerte for given Energy with linear Spline Interpolation.
+        See www.geos.ed.ac.uk/~yliu23/docs/lect_spline.pdf
         """
         i = self.getNearestXvalue(x)
         
@@ -149,7 +168,6 @@ class SpLine(object):
         except:
             print "Value Error: energy value out of Range"
             return -1
-        #assert (Xj != Xi), "Interval length is zero. Energy value out of "
         
         A = (Xj - x)/(Xj -Xi)/1.
         B = (x - Xi)/(Xj -Xi)/1.
@@ -157,9 +175,10 @@ class SpLine(object):
         F_x = A * value_list[i] + B * value_list[i+1]
         
         return F_x
-        
-    def calcCubicSpline(self, x, value_list):
-        #TODO aus Lecture Funktion einarbeiten
-        pass     
-        
     
+    def calcCubicSpline(self, x, x_list, y_list):       
+        f_ip = interpolate.interp1d(x_list, y_list, kind='cubic')
+        F_x = f_ip(x)
+         
+        return F_x
+         

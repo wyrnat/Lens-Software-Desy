@@ -359,6 +359,13 @@ class BuilderFrame ( wx.Frame ):
 		self.Box_Material.SetSelection( 0 )
 		bSizer46.Add( self.Box_Material, 0, wx.ALL, 5 )
 		
+		self.m_staticText76 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"Spline factor", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText76.Wrap( -1 )
+		bSizer46.Add( self.m_staticText76, 0, wx.ALL, 5 )
+		
+		self.Field_Spline_Factor = wx.TextCtrl( self.Panel_CRLens, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer46.Add( self.Field_Spline_Factor, 0, wx.ALL, 5 )
+		
 		
 		bSizer46.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
@@ -824,6 +831,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.SetSizer( bSizer1 )
 		self.Layout()
+		self.StatusBar = self.CreateStatusBar( 1, wx.ST_SIZEGRIP, wx.ID_ANY )
 		
 		self.Centre( wx.BOTH )
 		
@@ -835,6 +843,7 @@ class BuilderFrame ( wx.Frame ):
 		self.Field_Intensity.Bind( wx.EVT_TEXT, self.onIChanged )
 		self.Field_dpsf.Bind( wx.EVT_TEXT, self.ondpsfChanged )
 		self.Box_Material.Bind( wx.EVT_CHOICE, self.onChangeMaterial )
+		self.Field_Spline_Factor.Bind( wx.EVT_TEXT, self.OnSplineChance )
 		self.Field_Density.Bind( wx.EVT_TEXT, self.onDensityChange )
 		self.Field_delta.Bind( wx.EVT_TEXT, self.onDeltaChanged )
 		self.Field_mu.Bind( wx.EVT_TEXT, self.onmuChanged )
@@ -871,6 +880,9 @@ class BuilderFrame ( wx.Frame ):
 		event.Skip()
 	
 	def onChangeMaterial( self, event ):
+		event.Skip()
+	
+	def OnSplineChance( self, event ):
 		event.Skip()
 	
 	def onDensityChange( self, event ):

@@ -1,27 +1,4 @@
-try:
-    from Werkzeuge import crlcalcWerkzeug
-except:
-    print "crlcalcWerkzeug missing. Maybe in another directory?"
-    exit()
-
-try:
-    from Services import spline, abbildungsgeometrie, diffraction, linse
-except:
-    print "Services or Service Class missing. Please add the package or the file to the path"
-    exit()
-
-try:
-    from Fachwerte import inputValues, outputValues, valProp, values
-except:
-    print "Fachwerte or Fachwert Class missing"
-    exit()
-    
-try:
-    from UI import crlcalcUI, Observable, gui_builder
-except:
-    print "UI missing. PLease add the Package to the path"
-    exit()
-
+""" Libraries """
 try:
     import wx
 except:
@@ -32,15 +9,50 @@ try:
 except:
     print "numpy Package missing. Please install numpy"
     exit()
+    
+try:
+    import scipy
+except:
+    print "scipy Package missing. Please install scipy"
+    exit()
+    
+""" Packages """
+    
+try:
+    from Fachwerte import inputValues, outputValues, valProp, values
+except:
+    print "Fachwerte or Fachwert Class missing"
+    exit()
+
+try:
+    from Services import spline, abbildungsgeometrie, diffraction, linse
+except:
+    print "Services or Service Class missing. Please add the package or the file to the path"
+    exit()
+    
+try:
+    from UI import crlcalcUI, gui_builder, observable
+except:
+    print "UI missing or UI class missing. PLease add the Package or the file to the path"
+    exit()
+
+try:
+    from Werkzeuge import crlcalcWerkzeug
+except:
+    print "crlcalcWerkzeug missing. Maybe in another directory?"
+    exit()
+
 
 """
 TODO: WebOffice anschreiben
 TODO: Gui umbauen, kein Gridbag mehr
-TODO: PySide herunterladen!
 TODO: Bilderchen auf Homepage
-TODO: Datei mit allen Werten ausgeben (Problem: Serveruebergabe)
-TODO: Rekursionslimit neu gesetzt. Wie reagiert der Server?
-TODO: GetFieldOut(In)putValue vereinigen
+TODO: Datei mit allen Werten speicherbar (Problem: Serveruebergabe)
+
+Wenn Internet verfuegbar
+TODO: PySide herunterladen
+TODO: Scipy herunterladen
+TODO: push nach Github, wenn cubic spline fertig
 """
 
 app = wx.PySimpleApp()

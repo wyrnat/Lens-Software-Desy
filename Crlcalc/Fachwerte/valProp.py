@@ -74,7 +74,7 @@ class ValProp(object):
         """
         return self.min_value
     
-    def getMaxvalue(self):
+    def getMaxValue(self):
         """
         returns max_value
         @return: max_value

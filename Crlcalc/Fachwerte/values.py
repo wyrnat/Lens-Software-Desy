@@ -62,7 +62,7 @@ class Values(object):
             if self.params[name].getType() == bool:
                 return self.params[name].getValue()
             else:
-                return "%.3g" % self.params[name].getValue()
+                return "%.5g" % self.params[name].getValue()
             
             
     def getObj(self, name):
@@ -72,4 +72,16 @@ class Values(object):
         @return: ValProp Object from dictionary 'list'
         '''
         return self.params[name]
+    
+    def getValueRequirements(self, name):
+        """
+        Returns value conditions for statusbar information
+        @param name: (string) the key for the dictionary 'list'
+        @return: string object with all information
+        """
+        type = "type: "+str(self.params[name].getType())
+        min_value = "min value: "+str(self.params[name].getMinValue())
+        max_value = "max value: "+str(self.params[name].getMaxValue())
+        
+        return "[ "+type+" | "+min_value+" | "+max_value+"]"
             

@@ -5,7 +5,7 @@ Created on 02.07.2015
 '''
 
 from gui_builder import BuilderFrame
-from Observable import Observable #Watch Out, double connection!
+from UI import observable
 
 class Gui(BuilderFrame):
     """
@@ -16,11 +16,18 @@ class Gui(BuilderFrame):
 
     def __init__(self):
         """
-        Initialize superclass and creates Object from Observable
+        Initialize superclass and creates Object from observable
         """
+        
         BuilderFrame.__init__(self,parent=None)
+
         #Watch Out, double connection!
-        self.observable = Observable()
+        self.myobservable = observable.Observable()
+        
+        #StatusBar
+        self.StatusBar.PushStatusText("Ready!")
+        self.statusSource = []
+        self.statusMessage = []
 
 
     def getFieldInputList(self):
@@ -45,7 +52,7 @@ class Gui(BuilderFrame):
                            'N': self.Field_N,
                            'rough': self.Field_rough,
                            'W': self.Field_W
-                                }
+                           }
         return FieldInput_List
     
     def getFieldInputValue(self, name):
@@ -67,6 +74,7 @@ class Gui(BuilderFrame):
             val = str(val)
         else:
             val = bool(val)
+            
         self.getFieldInputList()[name].SetValue(val)
     
     def getFieldOutputList(self):
@@ -125,53 +133,81 @@ class Gui(BuilderFrame):
             Field.SetForegroundColour((0,0,0))
         else:
             Field.SetForegroundColour((255,0,0))
-        
+            
+    """ Status Bar """
     
+    def statusBarPush(self, s, field):
+        if s != self.StatusBar.GetStatusText():
+            self.statusSource.append(field)
+            self.statusMessage.append(s)
+            self.StatusBar.PushStatusText(s)
+        
+    def statusBarPop(self, field):
+        index_list = []
+        for i, myfield in enumerate(self.statusSource):
+            if field == myfield:
+                index_list.append(i)
+        index_list.reverse()
+        
+        for i in index_list:
+            self.statusSource.pop(i)
+            self.statusMessage.pop(i)
+        self.refreshStatusBar()
+                
+    def refreshStatusBar(self):
+        e = self.StatusBar.GetStatusText()
+        while e != "Ready!":
+            self.StatusBar.PopStatusText()
+            e = self.StatusBar.GetStatusText()
+            
+        for text in self.statusMessage:
+            self.StatusBar.PushStatusText(text)
+
 
     """ Event Handling """       
             
     def onCheckChanged(self, event):
-        self.observable.informObserver("onCheckChanged")
+        self.myobservable.informObserver("onCheckChanged")
 
     
     def onEnergyChanged(self, event):
-        self.observable.informObserver("onEnergyChanged")
+        self.myobservable.informObserver("onEnergyChanged")
 
     
     def onChangeMaterial(self, event):
-        self.observable.informObserver("onChangeMaterial")
+        self.myobservable.informObserver("onChangeMaterial")
         
     def onSSHChanged(self, event):
-        self.observable.informObserver("b_h")
+        self.myobservable.informObserver("b_h")
     def onSSVChanged(self, event):
-        self.observable.informObserver("b_v")
+        self.myobservable.informObserver("b_v")
         
     def ongChanged(self, event):
-        self.observable.informObserver("g")
+        self.myobservable.informObserver("g")
         
     def onIChanged(self, event):
-        self.observable.informObserver("intensity")
+        self.myobservable.informObserver("intensity")
         
     def ondpsfChanged(self, event):
-        self.observable.informObserver("dpsf")
+        self.myobservable.informObserver("dpsf")
         
     def onRChanged(self, event):
-        self.observable.informObserver("R")
+        self.myobservable.informObserver("R")
         
     def onR_0Changed(self, event):
-        self.observable.informObserver("R_0")
+        self.myobservable.informObserver("R_0")
         
     def ondChanged(self, event):
-        self.observable.informObserver("d")
+        self.myobservable.informObserver("d")
         
     def onNChanged(self, event):
-        self.observable.informObserver("N")
+        self.myobservable.informObserver("N")
         
     def onroughnessChanged(self, event):
-        self.observable.informObserver("rough")
+        self.myobservable.informObserver("rough")
         
     def onWChanged(self, event):
-        self.observable.informObserver("onWChanged")
+        self.myobservable.informObserver("onWChanged")
         
         
         

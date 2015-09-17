@@ -5,8 +5,8 @@ Created on 25.06.2015
 '''
 
 #TODO: diesen Teil webfaehig machen
-import sys
-sys.path.append('..')
+# import sys
+# sys.path.append('..')
 
 # import the used classes
 from Services import abbildungsgeometrie
@@ -36,7 +36,7 @@ class CrlcalcWerkzeug(object):
         
         #instance of Gui and register as observer of the Gui
         self.gui = UI.Gui()
-        self.gui.observable.registerObserver(self)
+        self.gui.myobservable.registerObserver(self)
         
         # instance of spline
         self.spline = None
@@ -54,42 +54,46 @@ class CrlcalcWerkzeug(object):
         """
         Called if gui changed.
         Proceeds with reasonable method due to reason
-        @input reason (String) defines the further procedure
+        @param reason: (String) defines the further procedure
         """
         if (reason == "onChangeMaterial"):
-            if self.inVal.setValue('material_choice', self.gui.Box_Material.GetSelection()) == True:   
-                if self.calcNewSpline() == True:
-                    self.calcOutput()
-                else:
-                    pass #TODO: Fehlerbehandlung fuer nicht gefundene Dateien
+            if self.inVal.setValue('material_choice', self.gui.Box_Material.GetSelection()) == True:
+                validness = self.calcNewSpline()
+                self.FieldFactoring('material_choice', "Material files not found. No files for chosen index",
+                                 successful = validness, color=False)
             else:
-                pass #TODO: Fehlerbehandlung fuer nicht gesetzten Index
+                self.gui.statusBarPush("invalid index", 'material_choice')
         elif (reason == "onEnergyChanged"):
-            if self.calcNewEnergy() == True:
-                self.gui.setFieldValidnessIndicator('energy', True)
-                self.calcOutput()
-            else:
-                self.gui.setFieldValidnessIndicator('energy', False)
+            validness = self.calcNewEnergy()
+            self.FieldFactoring('energy', "energy has not a valid value", successful=validness)
         elif (reason == "onCheckChanged"):
-            if self.calcCheckChanged() == True:
-                self.calcOutput()
-            else:
-                pass
+            self.calcCheckChanged()
+            self.calcOutput()
         elif (reason == "onWChanged"):
-            if self.calcWChanged() == True:
-                self.gui.setFieldValidnessIndicator('W', True)
-                self.calcOutput()
-            else:
-                self.gui.setFieldValidnessIndicator('W', False)
+            validness = self.calcWChanged()
+            self.FieldFactoring('W', "W has not a valid value", successful=validness)
         else:
-            if (self.inVal.setValue(reason, self.gui.getFieldInputValue(reason)) == True):
-                self.gui.setFieldValidnessIndicator(reason, True)
-                self.calcOutput()
-            else:
-                self.gui.setFieldValidnessIndicator(reason, False)
-                print reason + " has not a valid value"
-                # hier an dieser Stelle Fehlerabfangen fuer alle normalen Werte
-                # Fehler der speziellen Werte werden in den calc-Klassen behandelt
+            validness = self.inVal.setValue(reason, self.gui.getFieldInputValue(reason))
+            mymessage = reason + " has not a valid value"
+            self.FieldFactoring(reason, message = mymessage, successful = validness)
+            print self.gui.statusMessage
+                
+    def FieldFactoring(self, myfield, message, successful=True, color=True):
+        """
+        Help method to deal with the consequences of user input
+        @param myfield: (string) dict key for a gui object
+        @param message: (string) message for the statusbar in case of invalid input
+        @param successful: (bool) indicates value validness
+        @param color: (bool) indicates if color of Field is changeable
+        """
+        if color == True:
+            self.gui.setFieldValidnessIndicator(myfield, successful)
+        if successful == True:
+            self.gui.statusBarPop(myfield)
+            self.calcOutput()
+        else:
+            newmessage = message + " " + self.inVal.getValueRequirements(myfield)
+            self.gui.statusBarPush(newmessage, myfield)
             
         
                
@@ -112,7 +116,7 @@ class CrlcalcWerkzeug(object):
         for bezeichner in Fields:
             self.gui.setFieldOutputValue(bezeichner, self.outVal.getValueForUI(bezeichner))
       
-    # Not used in any way. Probably during a refactoring         
+    # Not used in any way. Maybe in case of debugging/refactoring         
 #     def getInputParameters(self):
 #         """
 #         Get the Input Parameters from the Fields
@@ -163,11 +167,6 @@ class CrlcalcWerkzeug(object):
             return False
         
         
-        
-#         assert (self.spline != None),"Could not create spline instance"
-#         assert (self.spline.checkConstruction()), "Could not read all data-files for spline-calculation"        
-            
-            
     def calcNewEnergy(self):
         """
         Event Method for Energy change.
@@ -189,6 +188,9 @@ class CrlcalcWerkzeug(object):
             return False
         
     def calcNewWavelength(self):
+        """
+        Calculates wavelength from energy value
+        """
         E = self.inVal.getValue('energy')
         abbgeo = abbildungsgeometrie.Abbildungsgeometrie()
         wl = abbgeo.getwavelength(E)

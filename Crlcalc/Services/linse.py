@@ -74,9 +74,7 @@ class Linse (object):
             return True
         else:
             return False
-        
-        
-        
+
         
     # intermediate Methods
         
@@ -105,11 +103,9 @@ class Linse (object):
         assert (N**2 != 1 + 1/W), "Bad Luck, Choice of N and W leads to division by zero"
         return f / ( 1 - W * (N**2-1) / (6. * f * N ) )
     
-    # TODO: stimmt das?
     def getH(self, N, W, R, delta):
         f = self.getf(R, N, delta)
         assert (f!=0), "f=0 leads to division by zero"
-        #TODO: 1W oder 2W klaeren
         L = N * W
         return - L**2 / f / 24
     
@@ -146,32 +142,3 @@ class Linse (object):
     def getR_0Lock(self, R, W, d):
         assert (W>=d), "negative squareroot due to W<d"
         return float(numpy.sqrt(R*(W-d)))                                                                        
-
-    """
-        #support functions
-        a_p = self.mu * self.N * self.R_0**2 / 2. / self.R
-        e2k = 2 * numpy.pi * self. energy / 12398.52
-        deff_part = self.mu * self.N * self.R + (e2k * self.delta * self.rough)**2
-        
-        
-        #calculate output values
-        self.f = self.R/(2. * self.N * self.delta)
-        self.f_corr = self.f / ( 1 - self.W * (self.N**2-1) / (6. * self.f * self.N ) )
-        self.T = (numpy.exp(-self.mu * self.N * self.d) *
-                  (1 - numpy.exp(-2 * a_p)) / a_p)
-        self.Tr = self.T * numpy.pi * self.R_0**2
-        self.a = a_p
-        self.a_eff = 2 * numpy.sqrt(self.R / self.mu / self.N *
-                                    (1 - numpy.exp(-a_p))
-                                    )
-        self.D_eff = 2 * numpy.sqrt(2*self.R**2 / deff_part /
-                                    numpy.exp(-deff_part * (self.R_0/self.R)**2 / 2.)
-                                    )
-        self.sigma = numpy.pi * self.R_0**2 * self.T
-
-        # special functions
-        number = numpy.round(self.R / (2. * self.f * self.delta) )
-        self.R_f = ( (number == 0.) + number ) * 2. * self.f * self.delta
-        self.N_f = (number == 0.) + number
-        
-    """
