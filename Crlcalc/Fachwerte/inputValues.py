@@ -30,7 +30,7 @@ class InputValues(Values):
                        'density': ValProp(0., float),                           #g/cm**3
                        'delta': ValProp(0., float),                             #cm**3/g
                        'mu': ValProp(0., float),                                #cm**2/g
-                       'N': ValProp(50, int),
+                       'N': ValProp(50, int, min_value = 0),
                        'd': ValProp(0.010, float),                              #mm
                        'rough': ValProp(0.1, float),                            #mm
                         'W': ValProp(1., float)                                 #mm

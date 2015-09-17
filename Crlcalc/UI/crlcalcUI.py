@@ -137,12 +137,24 @@ class Gui(BuilderFrame):
     """ Status Bar """
     
     def statusBarPush(self, s, field):
+        """
+        saves message and cause to an array.
+        pushes message to statusbar stack
+        @param s: (string) message
+        @param field: (string) key for a Field in the dictionary
+        """
         if s != self.StatusBar.GetStatusText():
             self.statusSource.append(field)
             self.statusMessage.append(s)
             self.StatusBar.PushStatusText(s)
         
     def statusBarPop(self, field):
+        """
+        delete the statusbar stack.
+        delete all entries in the array related to the field
+        refill the stack with the cleared array
+        @param field: (string) key for a Field in the dictionary
+        """
         index_list = []
         for i, myfield in enumerate(self.statusSource):
             if field == myfield:
@@ -155,6 +167,10 @@ class Gui(BuilderFrame):
         self.refreshStatusBar()
                 
     def refreshStatusBar(self):
+        """
+        Help method for statusBarPop
+        deleting and refilling the stack
+        """
         e = self.StatusBar.GetStatusText()
         while e != "Ready!":
             self.StatusBar.PopStatusText()

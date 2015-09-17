@@ -51,8 +51,6 @@ TODO: Datei mit allen Werten speicherbar (Problem: Serveruebergabe)
 
 Wenn Internet verfuegbar
 TODO: PySide herunterladen
-TODO: Scipy herunterladen
-TODO: push nach Github, wenn cubic spline fertig
 """
 
 app = wx.PySimpleApp()

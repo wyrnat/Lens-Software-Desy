@@ -91,6 +91,7 @@ class SpLine(object):
             f_e = open(path + "energy.dat", 'r')
         except:
             print "import Error: energy File not found"
+            print "Expected: " + path + "energy.dat"
             exit()
             
         lines_e = f_e.readlines()
@@ -124,17 +125,11 @@ class SpLine(object):
         """
         interface for calculating delta mu values from Combobox choice and energy
         """
-        #delta = self.calcLinearSpline(inVal.getValue('energy'), self.delta_values)
-        #mu = self.calcLinearSpline(inVal.getValue('energy'), self.mu_values)
+        delta = self.calcLinearSpline(inVal.getValue('energy'), self.delta_values)
+        mu = self.calcLinearSpline(inVal.getValue('energy'), self.mu_values)
         
-        delta = self.calcCubicSpline(inVal.getValue('energy'),
-                                     self.energy_values,
-                                     self.delta_values
-                                     )
-        mu = self.calcCubicSpline(inVal.getValue('energy'),
-                                  self.energy_values,
-                                  self.mu_values
-                                  )
+        #delta = self.calcCubicSpline(inVal.getValue('energy'), self.energy_values, self.delta_values)                          
+        #mu = self.calcCubicSpline(inVal.getValue('energy'), self.energy_values, self.mu_values)
          
         # returns True, if both values were set successful
         return ( inVal.setValue('delta', delta) and inVal.setValue('mu', mu ) )
@@ -176,7 +171,12 @@ class SpLine(object):
         
         return F_x
     
-    def calcCubicSpline(self, x, x_list, y_list):       
+    def calcCubicSpline(self, x, x_list, y_list):
+        """
+        scipy based high precision interpolation with cubic spline
+        Returns value for the devoloped function
+        See http://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.interp1d.html
+        """       
         f_ip = interpolate.interp1d(x_list, y_list, kind='cubic')
         F_x = f_ip(x)
          

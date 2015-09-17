@@ -76,7 +76,6 @@ class CrlcalcWerkzeug(object):
             validness = self.inVal.setValue(reason, self.gui.getFieldInputValue(reason))
             mymessage = reason + " has not a valid value"
             self.FieldFactoring(reason, message = mymessage, successful = validness)
-            print self.gui.statusMessage
                 
     def FieldFactoring(self, myfield, message, successful=True, color=True):
         """
