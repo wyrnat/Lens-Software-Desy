@@ -17,7 +17,7 @@ import wx.xrc
 class BuilderFrame ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version", pos = wx.DefaultPosition, size = wx.Size( 818,1010 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version", pos = wx.DefaultPosition, size = wx.Size( 904,1010 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -27,7 +27,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_scrolledWindow1 = wx.ScrolledWindow( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL|wx.VSCROLL )
 		self.m_scrolledWindow1.SetScrollRate( 5, 5 )
-		fgSizer1 = wx.FlexGridSizer( 3, 3, 0, 0 )
+		fgSizer1 = wx.FlexGridSizer( 2, 3, 0, 0 )
 		fgSizer1.SetFlexibleDirection( wx.BOTH )
 		fgSizer1.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 		
@@ -131,7 +131,7 @@ class BuilderFrame ( wx.Frame ):
 		self.Field_g.SetMaxLength( 0 ) 
 		bSizer64.Add( self.Field_g, 0, wx.ALL, 5 )
 		
-		self.m_staticText24 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"m", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText24 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText24.Wrap( -1 )
 		bSizer64.Add( self.m_staticText24, 0, wx.ALL, 5 )
 		
@@ -183,168 +183,133 @@ class BuilderFrame ( wx.Frame ):
 		bSizer5.Fit( self.Panel_XRay )
 		fgSizer1.Add( self.Panel_XRay, 1, wx.EXPAND |wx.ALL, 5 )
 		
-		self.Panel_Results = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		sbSizer11 = wx.StaticBoxSizer( wx.StaticBox( self.Panel_Results, wx.ID_ANY, u"Results for given Geometry" ), wx.VERTICAL )
+		self.m_panel7 = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		sbSizer4 = wx.StaticBoxSizer( wx.StaticBox( self.m_panel7, wx.ID_ANY, u"Compound Refractive Lens Structure" ), wx.VERTICAL )
 		
-		bSizer611 = wx.BoxSizer( wx.HORIZONTAL )
+		bSizer651 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText111 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"b:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText111.Wrap( -1 )
-		bSizer611.Add( self.m_staticText111, 0, wx.ALL, 5 )
+		self.m_staticText151 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText151.Wrap( -1 )
+		bSizer651.Add( self.m_staticText151, 0, wx.ALL, 5 )
 		
-		self.Field_b = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_b.SetMaxLength( 0 ) 
-		bSizer611.Add( self.Field_b, 0, wx.ALL, 5 )
+		self.Field_R = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_R.SetMaxLength( 0 ) 
+		bSizer651.Add( self.Field_R, 0, wx.ALL, 5 )
 		
-		self.m_staticText210 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText210.Wrap( -1 )
-		bSizer611.Add( self.m_staticText210, 0, wx.ALL, 5 )
-		
-		
-		sbSizer11.Add( bSizer611, 0, wx.EXPAND, 5 )
-		
-		bSizer612 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText112 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L1:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText112.Wrap( -1 )
-		bSizer612.Add( self.m_staticText112, 0, wx.ALL, 5 )
-		
-		self.Field_L1 = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_L1.SetMaxLength( 0 ) 
-		bSizer612.Add( self.Field_L1, 0, wx.ALL, 5 )
-		
-		self.m_staticText211 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText211.Wrap( -1 )
-		bSizer612.Add( self.m_staticText211, 0, wx.ALL, 5 )
+		self.m_staticText251 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText251.Wrap( -1 )
+		bSizer651.Add( self.m_staticText251, 0, wx.ALL, 5 )
 		
 		
-		sbSizer11.Add( bSizer612, 0, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer651, 1, wx.EXPAND, 5 )
 		
-		bSizer6411 = wx.BoxSizer( wx.HORIZONTAL )
+		bSizer652 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1411 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L2:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText1411.Wrap( -1 )
-		bSizer6411.Add( self.m_staticText1411, 0, wx.ALL, 5 )
+		self.m_staticText152 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R_0:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText152.Wrap( -1 )
+		bSizer652.Add( self.m_staticText152, 0, wx.ALL, 5 )
 		
-		self.Field_L2 = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_L2.SetMaxLength( 0 ) 
-		bSizer6411.Add( self.Field_L2, 0, wx.ALL, 5 )
+		self.Field_R_0 = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_R_0.SetMaxLength( 0 ) 
+		bSizer652.Add( self.Field_R_0, 0, wx.ALL, 5 )
 		
-		self.m_staticText2411 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText2411.Wrap( -1 )
-		bSizer6411.Add( self.m_staticText2411, 0, wx.ALL, 5 )
-		
-		
-		sbSizer11.Add( bSizer6411, 1, wx.EXPAND, 5 )
-		
-		self.m_staticline11 = wx.StaticLine( self.Panel_Results, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
-		sbSizer11.Add( self.m_staticline11, 0, wx.EXPAND |wx.ALL, 5 )
-		
-		bSizer671 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText171 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"Image size:", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText171.Wrap( -1 )
-		bSizer671.Add( self.m_staticText171, 0, wx.ALL, 5 )
+		self.m_staticText252 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText252.Wrap( -1 )
+		bSizer652.Add( self.m_staticText252, 0, wx.ALL, 5 )
 		
 		
-		sbSizer11.Add( bSizer671, 1, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer652, 1, wx.EXPAND, 5 )
 		
-		bSizer621 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText121 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"horizontal:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText121.Wrap( -1 )
-		bSizer621.Add( self.m_staticText121, 0, wx.ALL, 5 )
-		
-		self.Field_ISh = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_ISh.SetMaxLength( 0 ) 
-		bSizer621.Add( self.Field_ISh, 0, wx.ALL, 5 )
-		
-		self.m_staticText221 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText221.Wrap( -1 )
-		bSizer621.Add( self.m_staticText221, 0, wx.ALL, 5 )
+		bSizer653 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		
-		sbSizer11.Add( bSizer621, 0, wx.EXPAND, 5 )
+		bSizer653.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
-		bSizer631 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText131 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"vertical:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText131.Wrap( -1 )
-		bSizer631.Add( self.m_staticText131, 0, wx.ALL, 5 )
-		
-		self.Field_ISv = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_ISv.SetMaxLength( 0 ) 
-		bSizer631.Add( self.Field_ISv, 0, wx.ALL, 5 )
-		
-		self.m_staticText231 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText231.Wrap( -1 )
-		bSizer631.Add( self.m_staticText231, 0, wx.ALL, 5 )
+		self.Check_RWLock = wx.CheckBox( self.m_panel7, wx.ID_ANY, u"lock R_0 to W", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer653.Add( self.Check_RWLock, 0, wx.ALL, 5 )
 		
 		
-		sbSizer11.Add( bSizer631, 0, wx.EXPAND, 5 )
-		
-		self.m_staticline21 = wx.StaticLine( self.Panel_Results, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
-		sbSizer11.Add( self.m_staticline21, 0, wx.EXPAND |wx.ALL, 5 )
-		
-		bSizer641 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText141 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"magnitude:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText141.Wrap( -1 )
-		bSizer641.Add( self.m_staticText141, 0, wx.ALL, 5 )
-		
-		self.Field_magn = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_magn.SetMaxLength( 0 ) 
-		bSizer641.Add( self.Field_magn, 0, wx.ALL, 5 )
-		
-		self.m_staticText241 = wx.StaticText( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText241.Wrap( -1 )
-		bSizer641.Add( self.m_staticText241, 0, wx.ALL, 5 )
+		bSizer653.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		
-		sbSizer11.Add( bSizer641, 0, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer653, 1, wx.EXPAND, 5 )
 		
-		bSizer657 = wx.BoxSizer( wx.HORIZONTAL )
+		self.m_staticline4 = wx.StaticLine( self.m_panel7, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+		sbSizer4.Add( self.m_staticline4, 0, wx.EXPAND |wx.ALL, 5 )
 		
-		self.m_staticText153 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"gain:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText153.Wrap( -1 )
-		bSizer657.Add( self.m_staticText153, 0, wx.ALL, 5 )
+		bSizer654 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.Field_gain = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_gain.SetMaxLength( 0 ) 
-		bSizer657.Add( self.Field_gain, 0, wx.ALL, 5 )
+		self.m_staticText154 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"d:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText154.Wrap( -1 )
+		bSizer654.Add( self.m_staticText154, 0, wx.ALL, 5 )
 		
-		self.m_staticText253 = wx.StaticText( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText253.Wrap( -1 )
-		bSizer657.Add( self.m_staticText253, 0, wx.ALL, 5 )
+		self.Field_d = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_d.SetMaxLength( 0 ) 
+		bSizer654.Add( self.Field_d, 0, wx.ALL, 5 )
 		
-		
-		sbSizer11.Add( bSizer657, 0, wx.EXPAND, 5 )
-		
-		bSizer667 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText167 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"flux:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText167.Wrap( -1 )
-		bSizer667.Add( self.m_staticText167, 0, wx.ALL, 5 )
-		
-		self.Field_flux = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_flux.SetMaxLength( 0 ) 
-		bSizer667.Add( self.Field_flux, 0, wx.ALL, 5 )
-		
-		self.m_staticText267 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"Photons/s", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText267.Wrap( -1 )
-		bSizer667.Add( self.m_staticText267, 0, wx.ALL, 5 )
+		self.m_staticText254 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText254.Wrap( -1 )
+		bSizer654.Add( self.m_staticText254, 0, wx.ALL, 5 )
 		
 		
-		sbSizer11.Add( bSizer667, 0, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer654, 1, wx.EXPAND, 5 )
+		
+		bSizer655 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText155 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"N:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText155.Wrap( -1 )
+		bSizer655.Add( self.m_staticText155, 0, wx.ALL, 5 )
+		
+		self.Field_N = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_N.SetMaxLength( 0 ) 
+		bSizer655.Add( self.Field_N, 0, wx.ALL, 5 )
+		
+		self.m_staticText255 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"#Lenses", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText255.Wrap( -1 )
+		bSizer655.Add( self.m_staticText255, 0, wx.ALL, 5 )
 		
 		
-		self.Panel_Results.SetSizer( sbSizer11 )
-		self.Panel_Results.Layout()
-		sbSizer11.Fit( self.Panel_Results )
-		fgSizer1.Add( self.Panel_Results, 1, wx.EXPAND |wx.ALL, 5 )
+		sbSizer4.Add( bSizer655, 1, wx.EXPAND, 5 )
 		
-		self.Panel_Align = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		fgSizer1.Add( self.Panel_Align, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer656 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText156 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"roughness", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText156.Wrap( -1 )
+		bSizer656.Add( self.m_staticText156, 0, wx.ALL, 5 )
+		
+		self.Field_rough = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_rough.SetMaxLength( 0 ) 
+		bSizer656.Add( self.Field_rough, 0, wx.ALL, 5 )
+		
+		self.m_staticText256 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText256.Wrap( -1 )
+		bSizer656.Add( self.m_staticText256, 0, wx.ALL, 5 )
+		
+		
+		sbSizer4.Add( bSizer656, 1, wx.EXPAND, 5 )
+		
+		bSizer6561 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText1561 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"W:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1561.Wrap( -1 )
+		bSizer6561.Add( self.m_staticText1561, 0, wx.ALL, 5 )
+		
+		self.Field_W = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_W.SetMaxLength( 0 ) 
+		bSizer6561.Add( self.Field_W, 0, wx.ALL, 5 )
+		
+		self.m_staticText2561 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2561.Wrap( -1 )
+		bSizer6561.Add( self.m_staticText2561, 0, wx.ALL, 5 )
+		
+		
+		sbSizer4.Add( bSizer6561, 1, wx.EXPAND, 5 )
+		
+		
+		self.m_panel7.SetSizer( sbSizer4 )
+		self.m_panel7.Layout()
+		sbSizer4.Fit( self.m_panel7 )
+		fgSizer1.Add( self.m_panel7, 1, wx.EXPAND |wx.ALL, 5 )
 		
 		self.Panel_CRLens = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		sbSizer2 = wx.StaticBoxSizer( wx.StaticBox( self.Panel_CRLens, wx.ID_ANY, u"Lens Material" ), wx.VERTICAL )
@@ -358,13 +323,6 @@ class BuilderFrame ( wx.Frame ):
 		self.Box_Material = wx.Choice( self.Panel_CRLens, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, Box_MaterialChoices, 0 )
 		self.Box_Material.SetSelection( 0 )
 		bSizer46.Add( self.Box_Material, 0, wx.ALL, 5 )
-		
-		self.m_staticText76 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"Spline factor", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText76.Wrap( -1 )
-		bSizer46.Add( self.m_staticText76, 0, wx.ALL, 5 )
-		
-		self.Field_Spline_Factor = wx.TextCtrl( self.Panel_CRLens, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer46.Add( self.Field_Spline_Factor, 0, wx.ALL, 5 )
 		
 		
 		bSizer46.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -546,136 +504,165 @@ class BuilderFrame ( wx.Frame ):
 		sbSizer3.Fit( self.Panel_LensProp )
 		fgSizer1.Add( self.Panel_LensProp, 1, wx.EXPAND |wx.ALL, 5 )
 		
-		self.Panel_MTF = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		fgSizer1.Add( self.Panel_MTF, 1, wx.EXPAND |wx.ALL, 5 )
+		self.Panel_Results = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		sbSizer11 = wx.StaticBoxSizer( wx.StaticBox( self.Panel_Results, wx.ID_ANY, u"Results for given Geometry" ), wx.VERTICAL )
 		
-		self.m_panel7 = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		sbSizer4 = wx.StaticBoxSizer( wx.StaticBox( self.m_panel7, wx.ID_ANY, u"Compound Refractive Lens Structure" ), wx.VERTICAL )
+		bSizer611 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		bSizer651 = wx.BoxSizer( wx.HORIZONTAL )
+		self.m_staticText111 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"b:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText111.Wrap( -1 )
+		bSizer611.Add( self.m_staticText111, 0, wx.ALL, 5 )
 		
-		self.m_staticText151 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText151.Wrap( -1 )
-		bSizer651.Add( self.m_staticText151, 0, wx.ALL, 5 )
+		self.Field_b = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_b.SetMaxLength( 0 ) 
+		bSizer611.Add( self.Field_b, 0, wx.ALL, 5 )
 		
-		self.Field_R = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_R.SetMaxLength( 0 ) 
-		bSizer651.Add( self.Field_R, 0, wx.ALL, 5 )
-		
-		self.m_staticText251 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText251.Wrap( -1 )
-		bSizer651.Add( self.m_staticText251, 0, wx.ALL, 5 )
+		self.m_staticText210 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText210.Wrap( -1 )
+		bSizer611.Add( self.m_staticText210, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer651, 1, wx.EXPAND, 5 )
+		sbSizer11.Add( bSizer611, 0, wx.EXPAND, 5 )
 		
-		bSizer652 = wx.BoxSizer( wx.HORIZONTAL )
+		bSizer612 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText152 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R_0:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText152.Wrap( -1 )
-		bSizer652.Add( self.m_staticText152, 0, wx.ALL, 5 )
+		self.m_staticText112 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L1:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText112.Wrap( -1 )
+		bSizer612.Add( self.m_staticText112, 0, wx.ALL, 5 )
 		
-		self.Field_R_0 = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_R_0.SetMaxLength( 0 ) 
-		bSizer652.Add( self.Field_R_0, 0, wx.ALL, 5 )
+		self.Field_L1 = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_L1.SetMaxLength( 0 ) 
+		bSizer612.Add( self.Field_L1, 0, wx.ALL, 5 )
 		
-		self.m_staticText252 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText252.Wrap( -1 )
-		bSizer652.Add( self.m_staticText252, 0, wx.ALL, 5 )
-		
-		
-		sbSizer4.Add( bSizer652, 1, wx.EXPAND, 5 )
-		
-		bSizer653 = wx.BoxSizer( wx.HORIZONTAL )
+		self.m_staticText211 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText211.Wrap( -1 )
+		bSizer612.Add( self.m_staticText211, 0, wx.ALL, 5 )
 		
 		
-		bSizer653.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		sbSizer11.Add( bSizer612, 0, wx.EXPAND, 5 )
 		
-		self.Check_RWLock = wx.CheckBox( self.m_panel7, wx.ID_ANY, u"lock R_0 to W", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer653.Add( self.Check_RWLock, 0, wx.ALL, 5 )
+		bSizer6411 = wx.BoxSizer( wx.HORIZONTAL )
 		
+		self.m_staticText1411 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L2:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1411.Wrap( -1 )
+		bSizer6411.Add( self.m_staticText1411, 0, wx.ALL, 5 )
 		
-		bSizer653.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		self.Field_L2 = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_L2.SetMaxLength( 0 ) 
+		bSizer6411.Add( self.Field_L2, 0, wx.ALL, 5 )
 		
-		
-		sbSizer4.Add( bSizer653, 1, wx.EXPAND, 5 )
-		
-		self.m_staticline4 = wx.StaticLine( self.m_panel7, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
-		sbSizer4.Add( self.m_staticline4, 0, wx.EXPAND |wx.ALL, 5 )
-		
-		bSizer654 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText154 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"d:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText154.Wrap( -1 )
-		bSizer654.Add( self.m_staticText154, 0, wx.ALL, 5 )
-		
-		self.Field_d = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_d.SetMaxLength( 0 ) 
-		bSizer654.Add( self.Field_d, 0, wx.ALL, 5 )
-		
-		self.m_staticText254 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText254.Wrap( -1 )
-		bSizer654.Add( self.m_staticText254, 0, wx.ALL, 5 )
+		self.m_staticText2411 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2411.Wrap( -1 )
+		bSizer6411.Add( self.m_staticText2411, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer654, 1, wx.EXPAND, 5 )
+		sbSizer11.Add( bSizer6411, 1, wx.EXPAND, 5 )
 		
-		bSizer655 = wx.BoxSizer( wx.HORIZONTAL )
+		self.m_staticline11 = wx.StaticLine( self.Panel_Results, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+		sbSizer11.Add( self.m_staticline11, 0, wx.EXPAND |wx.ALL, 5 )
 		
-		self.m_staticText155 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"N:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText155.Wrap( -1 )
-		bSizer655.Add( self.m_staticText155, 0, wx.ALL, 5 )
+		bSizer671 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.Field_N = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_N.SetMaxLength( 0 ) 
-		bSizer655.Add( self.Field_N, 0, wx.ALL, 5 )
-		
-		self.m_staticText255 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"#Lenses", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText255.Wrap( -1 )
-		bSizer655.Add( self.m_staticText255, 0, wx.ALL, 5 )
+		self.m_staticText171 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"Image size:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText171.Wrap( -1 )
+		bSizer671.Add( self.m_staticText171, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer655, 1, wx.EXPAND, 5 )
+		sbSizer11.Add( bSizer671, 1, wx.EXPAND, 5 )
 		
-		bSizer656 = wx.BoxSizer( wx.HORIZONTAL )
+		bSizer621 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText156 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"roughness", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText156.Wrap( -1 )
-		bSizer656.Add( self.m_staticText156, 0, wx.ALL, 5 )
+		self.m_staticText121 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"horizontal:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText121.Wrap( -1 )
+		bSizer621.Add( self.m_staticText121, 0, wx.ALL, 5 )
 		
-		self.Field_rough = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_rough.SetMaxLength( 0 ) 
-		bSizer656.Add( self.Field_rough, 0, wx.ALL, 5 )
+		self.Field_ISh = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_ISh.SetMaxLength( 0 ) 
+		bSizer621.Add( self.Field_ISh, 0, wx.ALL, 5 )
 		
-		self.m_staticText256 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText256.Wrap( -1 )
-		bSizer656.Add( self.m_staticText256, 0, wx.ALL, 5 )
-		
-		
-		sbSizer4.Add( bSizer656, 1, wx.EXPAND, 5 )
-		
-		bSizer6561 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText1561 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"W:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
-		self.m_staticText1561.Wrap( -1 )
-		bSizer6561.Add( self.m_staticText1561, 0, wx.ALL, 5 )
-		
-		self.Field_W = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.Field_W.SetMaxLength( 0 ) 
-		bSizer6561.Add( self.Field_W, 0, wx.ALL, 5 )
-		
-		self.m_staticText2561 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText2561.Wrap( -1 )
-		bSizer6561.Add( self.m_staticText2561, 0, wx.ALL, 5 )
+		self.m_staticText221 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText221.Wrap( -1 )
+		bSizer621.Add( self.m_staticText221, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer6561, 1, wx.EXPAND, 5 )
+		sbSizer11.Add( bSizer621, 0, wx.EXPAND, 5 )
+		
+		bSizer631 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText131 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"vertical:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText131.Wrap( -1 )
+		bSizer631.Add( self.m_staticText131, 0, wx.ALL, 5 )
+		
+		self.Field_ISv = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_ISv.SetMaxLength( 0 ) 
+		bSizer631.Add( self.Field_ISv, 0, wx.ALL, 5 )
+		
+		self.m_staticText231 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText231.Wrap( -1 )
+		bSizer631.Add( self.m_staticText231, 0, wx.ALL, 5 )
 		
 		
-		self.m_panel7.SetSizer( sbSizer4 )
-		self.m_panel7.Layout()
-		sbSizer4.Fit( self.m_panel7 )
-		fgSizer1.Add( self.m_panel7, 1, wx.EXPAND |wx.ALL, 5 )
+		sbSizer11.Add( bSizer631, 0, wx.EXPAND, 5 )
+		
+		self.m_staticline21 = wx.StaticLine( self.Panel_Results, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+		sbSizer11.Add( self.m_staticline21, 0, wx.EXPAND |wx.ALL, 5 )
+		
+		bSizer641 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText141 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"magnitude:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText141.Wrap( -1 )
+		bSizer641.Add( self.m_staticText141, 0, wx.ALL, 5 )
+		
+		self.Field_magn = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_magn.SetMaxLength( 0 ) 
+		bSizer641.Add( self.Field_magn, 0, wx.ALL, 5 )
+		
+		self.m_staticText241 = wx.StaticText( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText241.Wrap( -1 )
+		bSizer641.Add( self.m_staticText241, 0, wx.ALL, 5 )
+		
+		
+		sbSizer11.Add( bSizer641, 0, wx.EXPAND, 5 )
+		
+		bSizer657 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText153 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"gain:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText153.Wrap( -1 )
+		bSizer657.Add( self.m_staticText153, 0, wx.ALL, 5 )
+		
+		self.Field_gain = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_gain.SetMaxLength( 0 ) 
+		bSizer657.Add( self.Field_gain, 0, wx.ALL, 5 )
+		
+		self.m_staticText253 = wx.StaticText( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText253.Wrap( -1 )
+		bSizer657.Add( self.m_staticText253, 0, wx.ALL, 5 )
+		
+		
+		sbSizer11.Add( bSizer657, 0, wx.EXPAND, 5 )
+		
+		bSizer667 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText167 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"flux:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText167.Wrap( -1 )
+		bSizer667.Add( self.m_staticText167, 0, wx.ALL, 5 )
+		
+		self.Field_flux = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_flux.SetMaxLength( 0 ) 
+		bSizer667.Add( self.Field_flux, 0, wx.ALL, 5 )
+		
+		self.m_staticText267 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"Photons/s", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText267.Wrap( -1 )
+		bSizer667.Add( self.m_staticText267, 0, wx.ALL, 5 )
+		
+		
+		sbSizer11.Add( bSizer667, 0, wx.EXPAND, 5 )
+		
+		
+		self.Panel_Results.SetSizer( sbSizer11 )
+		self.Panel_Results.Layout()
+		sbSizer11.Fit( self.Panel_Results )
+		fgSizer1.Add( self.Panel_Results, 1, wx.EXPAND |wx.ALL, 5 )
 		
 		self.m_panel8 = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer672 = wx.BoxSizer( wx.VERTICAL )
@@ -723,7 +710,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer66611.Add( self.m_staticText16611, 0, wx.ALL, 5 )
 		
 		
-		sbSizer31.Add( bSizer66611, 1, wx.EXPAND, 5 )
+		sbSizer31.Add( bSizer66611, 0, wx.EXPAND, 5 )
 		
 		bSizer6631 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -802,23 +789,6 @@ class BuilderFrame ( wx.Frame ):
 		bSizer672.Fit( self.m_panel8 )
 		fgSizer1.Add( self.m_panel8, 1, wx.EXPAND |wx.ALL, 5 )
 		
-		self.Panel_CalcControl = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		sbSizer7 = wx.StaticBoxSizer( wx.StaticBox( self.Panel_CalcControl, wx.ID_ANY, u"Calc Control" ), wx.VERTICAL )
-		
-		bSizer45 = wx.BoxSizer( wx.VERTICAL )
-		
-		self.Button_Calc = wx.Button( self.Panel_CalcControl, wx.ID_ANY, u"Calculate", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer45.Add( self.Button_Calc, 0, wx.ALL, 5 )
-		
-		
-		sbSizer7.Add( bSizer45, 1, wx.EXPAND, 5 )
-		
-		
-		self.Panel_CalcControl.SetSizer( sbSizer7 )
-		self.Panel_CalcControl.Layout()
-		sbSizer7.Fit( self.Panel_CalcControl )
-		fgSizer1.Add( self.Panel_CalcControl, 1, wx.EXPAND |wx.ALL, 5 )
-		
 		
 		self.m_scrolledWindow1.SetSizer( fgSizer1 )
 		self.m_scrolledWindow1.Layout()
@@ -842,11 +812,6 @@ class BuilderFrame ( wx.Frame ):
 		self.Field_g.Bind( wx.EVT_TEXT, self.ongChanged )
 		self.Field_Intensity.Bind( wx.EVT_TEXT, self.onIChanged )
 		self.Field_dpsf.Bind( wx.EVT_TEXT, self.ondpsfChanged )
-		self.Box_Material.Bind( wx.EVT_CHOICE, self.onChangeMaterial )
-		self.Field_Spline_Factor.Bind( wx.EVT_TEXT, self.OnSplineChance )
-		self.Field_Density.Bind( wx.EVT_TEXT, self.onDensityChange )
-		self.Field_delta.Bind( wx.EVT_TEXT, self.onDeltaChanged )
-		self.Field_mu.Bind( wx.EVT_TEXT, self.onmuChanged )
 		self.Field_R.Bind( wx.EVT_TEXT, self.onRChanged )
 		self.Field_R_0.Bind( wx.EVT_TEXT, self.onR_0Changed )
 		self.Check_RWLock.Bind( wx.EVT_CHECKBOX, self.onCheckChanged )
@@ -854,7 +819,10 @@ class BuilderFrame ( wx.Frame ):
 		self.Field_N.Bind( wx.EVT_TEXT, self.onNChanged )
 		self.Field_rough.Bind( wx.EVT_TEXT, self.onroughnessChanged )
 		self.Field_W.Bind( wx.EVT_TEXT, self.onWChanged )
-		self.Button_Calc.Bind( wx.EVT_BUTTON, self.onCalc )
+		self.Box_Material.Bind( wx.EVT_CHOICE, self.onChangeMaterial )
+		self.Field_Density.Bind( wx.EVT_TEXT, self.onDensityChange )
+		self.Field_delta.Bind( wx.EVT_TEXT, self.onDeltaChanged )
+		self.Field_mu.Bind( wx.EVT_TEXT, self.onmuChanged )
 	
 	def __del__( self ):
 		pass
@@ -879,21 +847,6 @@ class BuilderFrame ( wx.Frame ):
 	def ondpsfChanged( self, event ):
 		event.Skip()
 	
-	def onChangeMaterial( self, event ):
-		event.Skip()
-	
-	def OnSplineChance( self, event ):
-		event.Skip()
-	
-	def onDensityChange( self, event ):
-		event.Skip()
-	
-	def onDeltaChanged( self, event ):
-		event.Skip()
-	
-	def onmuChanged( self, event ):
-		event.Skip()
-	
 	def onRChanged( self, event ):
 		event.Skip()
 	
@@ -915,7 +868,16 @@ class BuilderFrame ( wx.Frame ):
 	def onWChanged( self, event ):
 		event.Skip()
 	
-	def onCalc( self, event ):
+	def onChangeMaterial( self, event ):
+		event.Skip()
+	
+	def onDensityChange( self, event ):
+		event.Skip()
+	
+	def onDeltaChanged( self, event ):
+		event.Skip()
+	
+	def onmuChanged( self, event ):
 		event.Skip()
 	
 

@@ -26,6 +26,10 @@ class SpLine(object):
         self.mu_values = []
         self.energy_values = []
         
+        #cubic spline
+        self.csf_mu = 0
+        self.csf_delta = 0
+
         
         # location of material files
         path = os.getcwd() + "/Services/elementdata/"
@@ -109,6 +113,10 @@ class SpLine(object):
         # set density
         inVal.setValue("density", density_list[inVal.getValue('material_choice')] )
         
+        # cubic spline function calculation
+        self.csf_mu = interpolate.interp1d(self.energy_values, self.mu_values, kind='cubic')
+        self.csf_delta = interpolate.interp1d(self.energy_values, self.delta_values, kind='cubic')
+        
         #Calculate Fachwerte for main init
         self.splinecalc(inVal, outVal)
         
@@ -125,11 +133,18 @@ class SpLine(object):
         """
         interface for calculating delta mu values from Combobox choice and energy
         """
-        delta = self.calcLinearSpline(inVal.getValue('energy'), self.delta_values)
-        mu = self.calcLinearSpline(inVal.getValue('energy'), self.mu_values)
+        e = inVal.getValue('energy')
+        """ Linear Spline """
+        #delta = self.calcLinearSpline(e, self.delta_values)
+        #mu = self.calcLinearSpline(e, self.mu_values)
         
-        #delta = self.calcCubicSpline(inVal.getValue('energy'), self.energy_values, self.delta_values)                          
-        #mu = self.calcCubicSpline(inVal.getValue('energy'), self.energy_values, self.mu_values)
+        """ Cubic Spline """
+        #delta = self.calcCubicSpline(e, self.energy_values, self.delta_values)                          
+        #mu = self.calcCubicSpline(e, self.energy_values, self.mu_values)
+        
+        """ Calculating from existing cs-Function """
+        delta = self.csf_delta(e)
+        mu = self.csf_mu(e)
          
         # returns True, if both values were set successful
         return ( inVal.setValue('delta', delta) and inVal.setValue('mu', mu ) )
@@ -149,7 +164,7 @@ class SpLine(object):
         return len(self.energy_values)-1
             
     
-    def calcLinearSpline(self, x, value_list):
+    def calcLinearSpline(self, x, energy_list, value_list):
         """
         For a non-scipy enviroment:
         returns the interpolated Output Value out of lists of Fachwerte for given Energy with linear Spline Interpolation.
@@ -158,8 +173,8 @@ class SpLine(object):
         i = self.getNearestXvalue(x)
         
         try:
-            Xi = self.energy_values[self.getNearestXvalue(x)]
-            Xj = self.energy_values[self.getNearestXvalue(x, up=1)]
+            Xi = energy_list[self.getNearestXvalue(x)]
+            Xj = energy_list[self.getNearestXvalue(x, up=1)]
         except:
             print "Value Error: energy value out of Range"
             return -1

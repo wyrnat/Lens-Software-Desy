@@ -97,11 +97,20 @@ class Linse (object):
         #TODO: delta ohne dichte-normierung oder mit
         return R/(2. * N * delta)
     
-    def getf_corr(self, R, N, delta, W):
+    def getf_corr_approx(self, R, N, delta, W):
         f = self.getf(R, N, delta)
         assert (f!=0), "f = 0 leads to division by zero"
         assert (N**2 != 1 + 1/W), "Bad Luck, Choice of N and W leads to division by zero"
         return f / ( 1 - W * (N**2-1) / (6. * f * N ) )
+    
+    def getf_corr(self, R, N, delta, W):
+        f = self.getf(R, N, delta)
+        L = N*W
+        assert (L > 0), "N*W needs to be bigger than 0"
+        factor = float(numpy.sqrt(f/(L*1.0)))
+        assert (factor % numpy.pi != 0), "sin(x) = 0 leads to division by zero"
+        return float(L * factor / numpy.sin(1/factor))
+    
     
     def getH(self, N, W, R, delta):
         f = self.getf(R, N, delta)

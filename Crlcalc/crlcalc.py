@@ -44,10 +44,8 @@ except:
 
 
 """
-TODO: WebOffice anschreiben
-TODO: Gui umbauen, kein Gridbag mehr
 TODO: Bilderchen auf Homepage
-TODO: Datei mit allen Werten speicherbar (Problem: Serveruebergabe)
+TODO: Datei mit allen Werten speicherbar
 
 Wenn Internet verfuegbar
 TODO: PySide herunterladen
@@ -56,7 +54,3 @@ TODO: PySide herunterladen
 app = wx.PySimpleApp()
 instance_of_Werkzeug = crlcalcWerkzeug.CrlcalcWerkzeug()
 app.MainLoop()
-
-
-
-        

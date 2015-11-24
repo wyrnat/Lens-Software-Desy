@@ -71,9 +71,9 @@ class Abbildungsgeometrie(object):
         b = self.getb_corr(f_corr, g, H)
         L1 = self.getL1(g, H)
         L2 = self.getL2_corr(f_corr, g)
-        ISh = self.getbgh_corr(f_corr, g, b_h)
-        ISv = self.getbgv_corr(f_corr, g, b_v)
-        magn = self.getmag_corr(g, f_corr)
+        ISh = self.getbgh_corr(f_corr, L1, b_h)
+        ISv = self.getbgv_corr(f_corr, L1, b_v)
+        magn = self.getmag_corr(L1, L2)
         gain = self.getgain_corr(R_0, f_corr, T, g, b_v, b_h)
         flux = self.getflux(sigma, intensity)
         NA = self.getNa_corr(f_corr, g, Deff)
@@ -107,11 +107,11 @@ class Abbildungsgeometrie(object):
     def getflux(self, sigma, intensity):
         return sigma * intensity
     
-    def getbgv_corr(self, f_corr, g, b_v):
-        return self.calcImageSize(f_corr, g, b_v)
+    def getbgv_corr(self, f_corr, L1, b_v):
+        return self.calcImageSize(f_corr, L1, b_v)
         
-    def getbgh_corr(self, f_corr, g, b_h):
-        return self.calcImageSize(f_corr, g, b_h)
+    def getbgh_corr(self, f_corr, L1, b_h):
+        return self.calcImageSize(f_corr, L1, b_h)
         
     def getbgv(self, g, b_v, R, N, delta):
         f = linse.Linse.getf(R, N, delta)
@@ -153,12 +153,11 @@ class Abbildungsgeometrie(object):
         L2 = self.getL2(f, g)
         return self.FWHM(2 / e2k * L2/ Deff)
     
-    def getmag_corr(self, g, f_corr):
-        return self.calcmag(g, f_corr)
+    def getmag_corr(self, L1, L2):
+        return self.calcmag(L1, L2)
         
-    def getmag(self, g, R, N, delta):
-        f = linse.Linse.getf(R, N, delta)
-        return self.calcmag(g, f)
+    def getmag(self, g, b):
+        return self.calcmag(g, b)
         
     def getwavelength(self, energy):
         return self.calcLambda(energy)
@@ -183,9 +182,9 @@ class Abbildungsgeometrie(object):
         assert (b_h!=0), "b_h = 0 leads to division by zero"
         return 4 * R_0 ** 2 * T / b_v / b_h * (g - f) ** 2 / f ** 2
 
-    def calcImageSize(self, f, g, b_x):
-        assert (f!=g), "f=g leads to division by zero"
-        return b_x * f / (g - f)
+    def calcImageSize(self, f, L1, b_x):
+        assert (f!=L1), "f=g leads to division by zero"
+        return b_x * f / (L1 - f)
 
     def calcImDist(self, f, g):
         assert (f!=g), "f=g leads to divison by zero"
@@ -199,9 +198,13 @@ class Abbildungsgeometrie(object):
         """ Energy to mm^-1"""
         return 2 * numpy.pi * e * 10e7 / 12398.52
 
-    def calcmag(self, L1, f):
+    def calcmag_alt(self, L1, f):
         assert (f!=0), "f = 0 leads to division by zero"
         mag = (L1 - f) / f
+        return (mag >= 1) * mag + (mag < 1) / mag
+    
+    def calcmag(self, L1, L2):
+        mag = L2/(L1*1.0)
         return (mag >= 1) * mag + (mag < 1) / mag
 
     def calcLambda(self, energy):
