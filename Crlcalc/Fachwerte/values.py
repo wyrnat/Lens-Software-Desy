@@ -62,7 +62,7 @@ class Values(object):
             if self.params[name].getType() == bool:
                 return self.params[name].getValue()
             else:
-                return "%.5g" % self.params[name].getValue()
+                return "%.4g" % self.params[name].getValue()
             
             
     def getObj(self, name):
@@ -79,9 +79,9 @@ class Values(object):
         @param name: (string) the key for the dictionary 'list'
         @return: string object with all information
         """
-        type = "type: "+str(self.params[name].getType())
+        vtype = "type: "+str(self.params[name].getType())
         min_value = "min value: "+str(self.params[name].getMinValue())
         max_value = "max value: "+str(self.params[name].getMaxValue())
         
-        return "[ "+type+" | "+min_value+" | "+max_value+"]"
+        return "[ "+vtype+" | "+min_value+" | "+max_value+"]"
             

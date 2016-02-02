@@ -27,9 +27,9 @@ class InputValues(Values):
                        'R_0': ValProp(0.447, float, min_value=0.),                            #mm
                        'lockR0toW': ValProp(False, bool),
                        'material_choice': ValProp(3, int, min_value=-1, max_value=12),
-                       'density': ValProp(0., float),                           #g/cm**3
-                       'delta': ValProp(0., float),                             #cm**3/g
-                       'mu': ValProp(0., float),                                #cm**2/g
+                       'density': ValProp(1., float, min_value=0.),                           #g/cm**3
+                       'delta': ValProp(1., float, min_value=0.),                             #cm**3/g
+                       'mu': ValProp(1., float, min_value=0.),                                #cm**2/g
                        'N': ValProp(50, int, min_value = 0),
                        'd': ValProp(0.010, float),                              #mm
                        'rough': ValProp(0.1, float),                            #mm

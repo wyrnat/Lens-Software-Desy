@@ -89,7 +89,10 @@ class CrlcalcWerkzeug(object):
             self.gui.setFieldValidnessIndicator(myfield, successful)
         if successful == True:
             self.gui.statusBarPop(myfield)
-            self.calcOutput()
+            if (myfield in ["density","delta","mu"]):
+                self.calcOutputNoSpline()
+            else:
+                self.calcOutput()
         else:
             newmessage = message + " " + self.inVal.getValueRequirements(myfield)
             self.gui.statusBarPush(newmessage, myfield)
@@ -133,6 +136,26 @@ class CrlcalcWerkzeug(object):
             print "Error in Spline. Parameters not settable"
             exit()
             
+        temp_linse = linse.Linse()
+        if temp_linse.calc(self.inVal, self.outVal) == False:
+            print "Error in Linse. Parameters not settable"
+            exit()
+            
+        temp_abbgeo = abbildungsgeometrie.Abbildungsgeometrie()
+        if temp_abbgeo.calc(self.inVal, self.outVal) == False:
+            print "Error in Abbildungsgeometrie. Parameters not settable"
+            exit()
+            
+        temp_dfrag = diffraction.Diffraction()
+        if temp_dfrag.calc(self.inVal, self.outVal) == False:
+            print "Error in Diffraction. Parameters not settable"
+            exit()
+            
+        self.setOutputParameters()
+        
+    def calcOutputNoSpline(self):
+        """ Provides the outval Values for changes in density, delta or mu"""
+        
         temp_linse = linse.Linse()
         if temp_linse.calc(self.inVal, self.outVal) == False:
             print "Error in Linse. Parameters not settable"

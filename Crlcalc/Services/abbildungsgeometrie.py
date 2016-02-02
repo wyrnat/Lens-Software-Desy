@@ -42,7 +42,7 @@ class Abbildungsgeometrie(object):
         # self. effectivity >> Quantum effictivity of setup for X-ray tube
         # self.NA >> Numeric aperture
         # self.DOF >> Depth of field
-        # TODO Was ist der microbeam
+        #TODO: Was ist der microbeam
         # self.DOF_microbeam >> 
         
         
@@ -196,7 +196,7 @@ class Abbildungsgeometrie(object):
 
     def E2k(self, e):
         """ Energy to mm^-1"""
-        return 2 * numpy.pi * e * 10e7 / 12398.52
+        return 2 * numpy.pi * e * 1e7 / 12398.52
 
     def calcmag_alt(self, L1, f):
         assert (f!=0), "f = 0 leads to division by zero"
@@ -209,10 +209,10 @@ class Abbildungsgeometrie(object):
 
     def calcLambda(self, energy):
         assert (energy!=0), "energy=0 leads to division by zero"
-        c = 2.9979 * 10e8
-        h = 6.6256 * 10e-34
-        eV = 1.602 * 10e-19
-        return h * c * 10e10 / energy / eV
+        c = 2.9979 * 1e8
+        h = 6.6256 * 1e-34
+        eV = 1.602 * 1e-19
+        return h * c * 1e10 / energy / eV
 
     def calcNA(self, deff, babst):
         assert (babst!=0), "image distance = 0 leads to division by zero"

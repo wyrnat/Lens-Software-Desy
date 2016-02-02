@@ -17,7 +17,7 @@ import wx.xrc
 class BuilderFrame ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version", pos = wx.DefaultPosition, size = wx.Size( 904,1010 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version 2.0 (8/1/2106)", pos = wx.DefaultPosition, size = wx.Size( 987,820 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -201,7 +201,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer651.Add( self.m_staticText251, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer651, 1, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer651, 0, wx.EXPAND, 5 )
 		
 		bSizer652 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -218,7 +218,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer652.Add( self.m_staticText252, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer652, 1, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer652, 0, wx.EXPAND, 5 )
 		
 		bSizer653 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -232,7 +232,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer653.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		
-		sbSizer4.Add( bSizer653, 1, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer653, 0, wx.EXPAND, 5 )
 		
 		self.m_staticline4 = wx.StaticLine( self.m_panel7, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
 		sbSizer4.Add( self.m_staticline4, 0, wx.EXPAND |wx.ALL, 5 )
@@ -252,7 +252,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer654.Add( self.m_staticText254, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer654, 1, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer654, 0, wx.EXPAND, 5 )
 		
 		bSizer655 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -269,7 +269,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer655.Add( self.m_staticText255, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer655, 1, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer655, 0, wx.EXPAND, 5 )
 		
 		bSizer656 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -286,7 +286,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer656.Add( self.m_staticText256, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer656, 1, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer656, 0, wx.EXPAND, 5 )
 		
 		bSizer6561 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -303,7 +303,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer6561.Add( self.m_staticText2561, 0, wx.ALL, 5 )
 		
 		
-		sbSizer4.Add( bSizer6561, 1, wx.EXPAND, 5 )
+		sbSizer4.Add( bSizer6561, 0, wx.EXPAND, 5 )
 		
 		
 		self.m_panel7.SetSizer( sbSizer4 )
@@ -345,7 +345,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer68.Add( self.m_staticText27, 0, wx.ALL, 5 )
 		
 		
-		sbSizer2.Add( bSizer68, 1, wx.EXPAND, 5 )
+		sbSizer2.Add( bSizer68, 0, wx.EXPAND, 5 )
 		
 		bSizer69 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -362,7 +362,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer69.Add( self.m_staticText28, 0, wx.ALL, 5 )
 		
 		
-		sbSizer2.Add( bSizer69, 1, wx.EXPAND, 5 )
+		sbSizer2.Add( bSizer69, 0, wx.EXPAND, 5 )
 		
 		bSizer610 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -379,7 +379,7 @@ class BuilderFrame ( wx.Frame ):
 		bSizer610.Add( self.m_staticText29, 0, wx.ALL, 5 )
 		
 		
-		sbSizer2.Add( bSizer610, 1, wx.EXPAND, 5 )
+		sbSizer2.Add( bSizer610, 0, wx.EXPAND, 5 )
 		
 		
 		self.Panel_CRLens.SetSizer( sbSizer2 )
@@ -389,9 +389,6 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.Panel_LensProp = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		sbSizer3 = wx.StaticBoxSizer( wx.StaticBox( self.Panel_LensProp, wx.ID_ANY, u"Lens Properties" ), wx.VERTICAL )
-		
-		
-		sbSizer3.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		bSizer661 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -494,9 +491,6 @@ class BuilderFrame ( wx.Frame ):
 		
 		
 		sbSizer3.Add( bSizer666, 0, wx.EXPAND, 5 )
-		
-		
-		sbSizer3.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		
 		self.Panel_LensProp.SetSizer( sbSizer3 )
@@ -664,22 +658,22 @@ class BuilderFrame ( wx.Frame ):
 		sbSizer11.Fit( self.Panel_Results )
 		fgSizer1.Add( self.Panel_Results, 1, wx.EXPAND |wx.ALL, 5 )
 		
-		self.m_panel8 = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.Panel_diffraction = wx.Panel( self.m_scrolledWindow1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer672 = wx.BoxSizer( wx.VERTICAL )
 		
-		sbSizer31 = wx.StaticBoxSizer( wx.StaticBox( self.m_panel8, wx.ID_ANY, u"Corrected for diffraction, psf and roughness" ), wx.VERTICAL )
+		sbSizer31 = wx.StaticBoxSizer( wx.StaticBox( self.Panel_diffraction, wx.ID_ANY, u"Corrected for diffraction, psf and roughness" ), wx.VERTICAL )
 		
 		bSizer6611 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1611 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"diff. limit:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"diff. limit:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1611.Wrap( -1 )
 		bSizer6611.Add( self.m_staticText1611, 0, wx.ALL, 5 )
 		
-		self.Field_DiffLimit = wx.TextCtrl( self.m_panel8, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_DiffLimit = wx.TextCtrl( self.Panel_diffraction, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_DiffLimit.SetMaxLength( 0 ) 
 		bSizer6611.Add( self.Field_DiffLimit, 0, wx.ALL, 5 )
 		
-		self.m_staticText2611 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2611.Wrap( -1 )
 		bSizer6611.Add( self.m_staticText2611, 0, wx.ALL, 5 )
 		
@@ -688,15 +682,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6621 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1621 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"depth of f.", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1621 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"depth of f.", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1621.Wrap( -1 )
 		bSizer6621.Add( self.m_staticText1621, 0, wx.ALL, 5 )
 		
-		self.Field_dof = wx.TextCtrl( self.m_panel8, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_dof = wx.TextCtrl( self.Panel_diffraction, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_dof.SetMaxLength( 0 ) 
 		bSizer6621.Add( self.Field_dof, 0, wx.ALL, 5 )
 		
-		self.m_staticText2621 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2621 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2621.Wrap( -1 )
 		bSizer6621.Add( self.m_staticText2621, 0, wx.ALL, 5 )
 		
@@ -705,7 +699,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer66611 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText16611 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"Corrected Image Size:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.m_staticText16611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"Corrected Image Size:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.m_staticText16611.Wrap( -1 )
 		bSizer66611.Add( self.m_staticText16611, 0, wx.ALL, 5 )
 		
@@ -714,15 +708,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6631 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1631 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"microbeam DOF", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1631 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"microbeam DOF", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1631.Wrap( -1 )
 		bSizer6631.Add( self.m_staticText1631, 0, wx.ALL, 5 )
 		
-		self.Field_mdof = wx.TextCtrl( self.m_panel8, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_mdof = wx.TextCtrl( self.Panel_diffraction, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_mdof.SetMaxLength( 0 ) 
 		bSizer6631.Add( self.Field_mdof, 0, wx.ALL, 5 )
 		
-		self.m_staticText2631 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2631 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2631.Wrap( -1 )
 		bSizer6631.Add( self.m_staticText2631, 0, wx.ALL, 5 )
 		
@@ -731,15 +725,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6641 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1641 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"horizontal:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1641 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"horizontal:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1641.Wrap( -1 )
 		bSizer6641.Add( self.m_staticText1641, 0, wx.ALL, 5 )
 		
-		self.Field_IShCorr = wx.TextCtrl( self.m_panel8, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_IShCorr = wx.TextCtrl( self.Panel_diffraction, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_IShCorr.SetMaxLength( 0 ) 
 		bSizer6641.Add( self.Field_IShCorr, 0, wx.ALL, 5 )
 		
-		self.m_staticText2641 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2641 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2641.Wrap( -1 )
 		bSizer6641.Add( self.m_staticText2641, 0, wx.ALL, 5 )
 		
@@ -748,15 +742,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6651 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1651 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"vertical:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1651 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"vertical:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1651.Wrap( -1 )
 		bSizer6651.Add( self.m_staticText1651, 0, wx.ALL, 5 )
 		
-		self.Field_ISvCorr = wx.TextCtrl( self.m_panel8, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_ISvCorr = wx.TextCtrl( self.Panel_diffraction, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_ISvCorr.SetMaxLength( 0 ) 
 		bSizer6651.Add( self.Field_ISvCorr, 0, wx.ALL, 5 )
 		
-		self.m_staticText2651 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2651 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2651.Wrap( -1 )
 		bSizer6651.Add( self.m_staticText2651, 0, wx.ALL, 5 )
 		
@@ -765,15 +759,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6661 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1661 = wx.StaticText( self.m_panel8, wx.ID_ANY, u"gain:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1661 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"gain:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1661.Wrap( -1 )
 		bSizer6661.Add( self.m_staticText1661, 0, wx.ALL, 5 )
 		
-		self.Field_gainCorr = wx.TextCtrl( self.m_panel8, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Field_gainCorr = wx.TextCtrl( self.Panel_diffraction, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_gainCorr.SetMaxLength( 0 ) 
 		bSizer6661.Add( self.Field_gainCorr, 0, wx.ALL, 5 )
 		
-		self.m_staticText2661 = wx.StaticText( self.m_panel8, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText2661 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText2661.Wrap( -1 )
 		bSizer6661.Add( self.m_staticText2661, 0, wx.ALL, 5 )
 		
@@ -784,10 +778,10 @@ class BuilderFrame ( wx.Frame ):
 		bSizer672.Add( sbSizer31, 1, wx.EXPAND, 5 )
 		
 		
-		self.m_panel8.SetSizer( bSizer672 )
-		self.m_panel8.Layout()
-		bSizer672.Fit( self.m_panel8 )
-		fgSizer1.Add( self.m_panel8, 1, wx.EXPAND |wx.ALL, 5 )
+		self.Panel_diffraction.SetSizer( bSizer672 )
+		self.Panel_diffraction.Layout()
+		bSizer672.Fit( self.Panel_diffraction )
+		fgSizer1.Add( self.Panel_diffraction, 1, wx.EXPAND |wx.ALL, 5 )
 		
 		
 		self.m_scrolledWindow1.SetSizer( fgSizer1 )

@@ -193,6 +193,15 @@ class Gui(BuilderFrame):
     def onChangeMaterial(self, event):
         self.myobservable.informObserver("onChangeMaterial")
         
+    def onDensityChange(self, event):
+        self.myobservable.informObserver("density")
+        
+    def onDeltaChanged(self, event):
+        self.myobservable.informObserver("delta")
+        
+    def onmuChanged(self, event):
+        self.myobservable.informObserver("mu")
+        
     def onSSHChanged(self, event):
         self.myobservable.informObserver("b_h")
     def onSSVChanged(self, event):
