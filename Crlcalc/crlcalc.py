@@ -44,11 +44,9 @@ except:
 
 
 """
-TODO: Bilderchen auf Homepage
+TODO: Bilder auf Homepage
 TODO: Datei mit allen Werten speicherbar
-
-Wenn Internet verfuegbar
-TODO: PySide herunterladen
+TODO: Meeting Jan-Eric wegen Django
 """
 
 app = wx.PySimpleApp()

@@ -14,6 +14,8 @@ class InputValues(Values):
     def __init__(self):
         '''
         Auto-creates all input values
+        @note: delta and mu are still divided by density. 
+        @note: Raw values appear in Services
         '''
         # Initial Fachwerte
         self.params = {'energy': ValProp(15000.0, float, 499., 200001.),        #eV

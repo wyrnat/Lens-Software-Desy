@@ -49,7 +49,7 @@ class Linse (object):
         R_0 = inVal.getValue('R_0')
         #TODO nachfragen
         delta = inVal.getValue('delta') * inVal.getValue('density')
-        mu = inVal.getValue('mu') * inVal.getValue('density')
+        mu = inVal.getValue('mu') * inVal.getValue('density') /10. # factor 10 due to units [mm/cm]
         N = inVal.getValue('N')
         d = inVal.getValue('d')
         rough = inVal.getValue('rough')
@@ -143,6 +143,7 @@ class Linse (object):
         assert (deff_part>0), "deff_part has to be greater than zero"
         assert (R>=0), "R shall not be negative"
         return 2 * float( numpy.sqrt(2*R**2 / deff_part * (1 - numpy.exp(-deff_part / 2. * (R_0/R)**2)) ) )
+    
     def getD_eff(self, mu, N, R, R_0, delta, rough, energy):
         a_p = self.getAp(mu, N, R_0, R, delta, rough, energy)
         return 2*R_0 * float( numpy.sqrt((1-numpy.exp(-a_p)) /a_p ) )
