@@ -47,7 +47,7 @@
             <property name="size">987,820</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass"></property>
-            <property name="title">CRLcalc - Offline Test Version 2.1 (2/2/2106)</property>
+            <property name="title">CRLcalc - Offline Test Version 2.1.1 (3/2/2106)</property>
             <property name="tooltip"></property>
             <property name="window_extra_style"></property>
             <property name="window_name"></property>
@@ -351,7 +351,7 @@
                                                                         <property name="style"></property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">beam energy</property>
                                                                         <property name="window_extra_style"></property>
                                                                         <property name="window_name"></property>
                                                                         <property name="window_style"></property>
@@ -395,7 +395,7 @@
                                                                         <property name="aui_position"></property>
                                                                         <property name="aui_row"></property>
                                                                         <property name="best_size"></property>
-                                                                        <property name="bg"></property>
+                                                                        <property name="bg">251,252,148</property>
                                                                         <property name="caption"></property>
                                                                         <property name="caption_visible">1</property>
                                                                         <property name="center_pane">0</property>
@@ -434,7 +434,7 @@
                                                                         <property name="style">wxTE_RICH</property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">beam energy</property>
                                                                         <property name="validator_data_type"></property>
                                                                         <property name="validator_style">wxFILTER_NONE</property>
                                                                         <property name="validator_type">wxDefaultValidator</property>
@@ -619,7 +619,7 @@
                                                                         <property name="style"></property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">beam wavelength</property>
                                                                         <property name="window_extra_style"></property>
                                                                         <property name="window_name"></property>
                                                                         <property name="window_style"></property>
@@ -663,7 +663,7 @@
                                                                         <property name="aui_position"></property>
                                                                         <property name="aui_row"></property>
                                                                         <property name="best_size"></property>
-                                                                        <property name="bg"></property>
+                                                                        <property name="bg">wxSYS_COLOUR_WINDOW</property>
                                                                         <property name="caption"></property>
                                                                         <property name="caption_visible">1</property>
                                                                         <property name="center_pane">0</property>
@@ -702,7 +702,7 @@
                                                                         <property name="style"></property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">beam wavelength</property>
                                                                         <property name="validator_data_type"></property>
                                                                         <property name="validator_style">wxFILTER_NONE</property>
                                                                         <property name="validator_type">wxDefaultValidator</property>
@@ -1106,7 +1106,7 @@
                                                                         <property name="aui_position"></property>
                                                                         <property name="aui_row"></property>
                                                                         <property name="best_size"></property>
-                                                                        <property name="bg"></property>
+                                                                        <property name="bg">251,252,148</property>
                                                                         <property name="caption"></property>
                                                                         <property name="caption_visible">1</property>
                                                                         <property name="center_pane">0</property>
@@ -1374,7 +1374,7 @@
                                                                         <property name="aui_position"></property>
                                                                         <property name="aui_row"></property>
                                                                         <property name="best_size"></property>
-                                                                        <property name="bg"></property>
+                                                                        <property name="bg">251,252,148</property>
                                                                         <property name="caption"></property>
                                                                         <property name="caption_visible">1</property>
                                                                         <property name="center_pane">0</property>
@@ -1679,7 +1679,7 @@
                                                                         <property name="style"></property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">distance between source and mirror plane</property>
                                                                         <property name="window_extra_style"></property>
                                                                         <property name="window_name"></property>
                                                                         <property name="window_style"></property>
@@ -1723,7 +1723,7 @@
                                                                         <property name="aui_position"></property>
                                                                         <property name="aui_row"></property>
                                                                         <property name="best_size"></property>
-                                                                        <property name="bg"></property>
+                                                                        <property name="bg">251,252,148</property>
                                                                         <property name="caption"></property>
                                                                         <property name="caption_visible">1</property>
                                                                         <property name="center_pane">0</property>
@@ -1762,7 +1762,7 @@
                                                                         <property name="style"></property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">distance between source and mirror plane</property>
                                                                         <property name="validator_data_type"></property>
                                                                         <property name="validator_style">wxFILTER_NONE</property>
                                                                         <property name="validator_type">wxDefaultValidator</property>
@@ -1947,7 +1947,7 @@
                                                                         <property name="style"></property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">Intensity of the beam</property>
                                                                         <property name="window_extra_style"></property>
                                                                         <property name="window_name"></property>
                                                                         <property name="window_style"></property>
@@ -1991,7 +1991,7 @@
                                                                         <property name="aui_position"></property>
                                                                         <property name="aui_row"></property>
                                                                         <property name="best_size"></property>
-                                                                        <property name="bg"></property>
+                                                                        <property name="bg">251,252,148</property>
                                                                         <property name="caption"></property>
                                                                         <property name="caption_visible">1</property>
                                                                         <property name="center_pane">0</property>
@@ -2030,7 +2030,7 @@
                                                                         <property name="style"></property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">Intensity of the beam</property>
                                                                         <property name="validator_data_type"></property>
                                                                         <property name="validator_style">wxFILTER_NONE</property>
                                                                         <property name="validator_type">wxDefaultValidator</property>
@@ -2192,7 +2192,7 @@
                                                                         <property name="floatable">1</property>
                                                                         <property name="font"></property>
                                                                         <property name="gripper">0</property>
-                                                                        <property name="hidden">0</property>
+                                                                        <property name="hidden">1</property>
                                                                         <property name="id">wxID_ANY</property>
                                                                         <property name="label">dpsf</property>
                                                                         <property name="max_size"></property>
@@ -2215,7 +2215,7 @@
                                                                         <property name="style"></property>
                                                                         <property name="subclass"></property>
                                                                         <property name="toolbar_pane">0</property>
-                                                                        <property name="tooltip"></property>
+                                                                        <property name="tooltip">detector point spread function:&#x0A;resolving capacity of the detector for focus determination</property>
                                                                         <property name="window_extra_style"></property>
                                                                         <property name="window_name"></property>
                                                                         <property name="window_style"></property>
@@ -2259,7 +2259,7 @@
                                                                         <property name="aui_position"></property>
                                                                         <property name="aui_row"></property>
                                                                         <property name="best_size"></property>
-                                                                        <property name="bg"></property>
+                                                                        <property name="bg">251,252,148</property>
                                                                         <property name="caption"></property>
                                                                         <property name="caption_visible">1</property>
                                                                         <property name="center_pane">0</property>
@@ -2275,7 +2275,7 @@
                                                                         <property name="floatable">1</property>
                                                                         <property name="font"></property>
                                                                         <property name="gripper">0</property>
-                                                                        <property name="hidden">0</property>
+                                                                        <property name="hidden">1</property>
                                                                         <property name="id">wxID_ANY</property>
                                                                         <property name="max_size"></property>
                                                                         <property name="maximize_button">0</property>
@@ -2366,7 +2366,7 @@
                                                                         <property name="floatable">1</property>
                                                                         <property name="font"></property>
                                                                         <property name="gripper">0</property>
-                                                                        <property name="hidden">0</property>
+                                                                        <property name="hidden">1</property>
                                                                         <property name="id">wxID_ANY</property>
                                                                         <property name="label">mm</property>
                                                                         <property name="max_size"></property>
@@ -2574,7 +2574,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">lens curvature:&#x0A;radius of virtual sphere on the central point of the lens</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -2618,7 +2618,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">251,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -2657,7 +2657,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">lens curvature:&#x0A;radius of virtual sphere on the central point of the lens</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -2842,7 +2842,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">2*R_0 = lens height</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -2886,7 +2886,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">251,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -2925,7 +2925,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">2*R_0 = lens height</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -3081,7 +3081,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">251,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -3121,7 +3121,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">R_0 depending on thickness (W) and curvature (R)</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -3310,7 +3310,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">lens thickness at the tightest point</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -3354,7 +3354,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">251,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -3393,7 +3393,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">lens thickness at the tightest point</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -3578,7 +3578,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">Number of lenses</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -3622,7 +3622,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">251,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -3661,7 +3661,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">Number of lenses</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -3846,7 +3846,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">roughness on lens surface</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -3890,7 +3890,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">251,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -3929,7 +3929,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">roughness on lens surface</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -4114,7 +4114,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">lens thickness (in beam direction)</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -4158,7 +4158,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">251,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -4197,7 +4197,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">lens thickness (in beam direction)</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -4590,7 +4590,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">density of lens material</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -4634,7 +4634,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">209,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -4673,7 +4673,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">density of lens material</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -4858,7 +4858,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">index of refraction divided by the material density</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -4902,7 +4902,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">209,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -4941,7 +4941,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">index of refraction divided by the material density</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -5126,7 +5126,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">mass attenuation coefficient</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -5170,7 +5170,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">209,252,148</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -5209,7 +5209,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">mass attenuation coefficient</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -5483,7 +5483,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">distance bewteen principle plane and focus</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -5527,7 +5527,7 @@
                                                                 <property name="aui_position"></property>
                                                                 <property name="aui_row"></property>
                                                                 <property name="best_size"></property>
-                                                                <property name="bg"></property>
+                                                                <property name="bg">wxSYS_COLOUR_WINDOW</property>
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
@@ -5566,7 +5566,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">distance bewteen principle plane and focus</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -5751,7 +5751,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">difference between mirror plane and principle plane</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -5834,7 +5834,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">difference between mirror plane and principle plane</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -6019,7 +6019,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">effective aperture for diffraction and roughness</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -6102,7 +6102,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">effective aperture for diffraction and roughness</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -6287,7 +6287,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">numeric aperture</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -6370,7 +6370,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">numeric aperture</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -6555,7 +6555,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">Transmission</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -6638,7 +6638,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">Transmission</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -6823,7 +6823,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">sigma value of the focus</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -6906,7 +6906,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">sigma value of the focus</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -7180,7 +7180,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">distance between mirror plane and image</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -7263,7 +7263,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">distance between mirror plane and image</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -7448,7 +7448,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">distance between source and principle plane</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -7531,7 +7531,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">distance between source and principle plane</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -7716,7 +7716,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">distance between principle plane and image</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -7799,7 +7799,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">distance between principle plane and image</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -8776,7 +8776,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">magnification of the image setup</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -8859,7 +8859,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">magnification of the image setup</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>
@@ -9312,7 +9312,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">cross sections times intensity</property>
                                                                 <property name="window_extra_style"></property>
                                                                 <property name="window_name"></property>
                                                                 <property name="window_style"></property>
@@ -9395,7 +9395,7 @@
                                                                 <property name="style"></property>
                                                                 <property name="subclass"></property>
                                                                 <property name="toolbar_pane">0</property>
-                                                                <property name="tooltip"></property>
+                                                                <property name="tooltip">cross sections times intensity</property>
                                                                 <property name="validator_data_type"></property>
                                                                 <property name="validator_style">wxFILTER_NONE</property>
                                                                 <property name="validator_type">wxDefaultValidator</property>

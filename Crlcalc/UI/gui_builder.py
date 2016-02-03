@@ -17,7 +17,7 @@ import wx.xrc
 class BuilderFrame ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version 2.0 (8/1/2106)", pos = wx.DefaultPosition, size = wx.Size( 987,820 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version 2.1.1 (3/2/2106)", pos = wx.DefaultPosition, size = wx.Size( 987,820 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -40,11 +40,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText1 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"energy:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1.Wrap( -1 )
+		self.m_staticText1.SetToolTipString( u"beam energy" )
+		
 		bSizer6.Add( self.m_staticText1, 0, wx.ALL, 5 )
 		
 		self.Field_Energy = wx.TextCtrl( self.Panel_XRay, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_RICH )
 		self.Field_Energy.SetMaxLength( 0 ) 
 		self.Field_Energy.SetForegroundColour( wx.Colour( 0, 0, 0 ) )
+		self.Field_Energy.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_Energy.SetToolTipString( u"beam energy" )
 		
 		bSizer6.Add( self.Field_Energy, 0, wx.ALL, 5 )
 		
@@ -59,10 +63,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText113 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"wavelength:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText113.Wrap( -1 )
+		self.m_staticText113.SetToolTipString( u"beam wavelength" )
+		
 		bSizer61.Add( self.m_staticText113, 0, wx.ALL, 5 )
 		
 		self.Field_WaveLength = wx.TextCtrl( self.Panel_XRay, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_WaveLength.SetMaxLength( 0 ) 
+		self.Field_WaveLength.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.Field_WaveLength.SetToolTipString( u"beam wavelength" )
+		
 		bSizer61.Add( self.Field_WaveLength, 0, wx.ALL, 5 )
 		
 		self.m_staticText21 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"Å", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -92,6 +101,8 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.Field_SSh = wx.TextCtrl( self.Panel_XRay, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_SSh.SetMaxLength( 0 ) 
+		self.Field_SSh.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		
 		bSizer62.Add( self.Field_SSh, 0, wx.ALL, 5 )
 		
 		self.m_staticText22 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -109,6 +120,8 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.Field_SSv = wx.TextCtrl( self.Panel_XRay, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_SSv.SetMaxLength( 0 ) 
+		self.Field_SSv.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		
 		bSizer63.Add( self.Field_SSv, 0, wx.ALL, 5 )
 		
 		self.m_staticText23 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -125,10 +138,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText14 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"g", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText14.Wrap( -1 )
+		self.m_staticText14.SetToolTipString( u"distance between source and mirror plane" )
+		
 		bSizer64.Add( self.m_staticText14, 0, wx.ALL, 5 )
 		
 		self.Field_g = wx.TextCtrl( self.Panel_XRay, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_g.SetMaxLength( 0 ) 
+		self.Field_g.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_g.SetToolTipString( u"distance between source and mirror plane" )
+		
 		bSizer64.Add( self.Field_g, 0, wx.ALL, 5 )
 		
 		self.m_staticText24 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -142,10 +160,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText15 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"I", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText15.Wrap( -1 )
+		self.m_staticText15.SetToolTipString( u"Intensity of the beam" )
+		
 		bSizer65.Add( self.m_staticText15, 0, wx.ALL, 5 )
 		
 		self.Field_Intensity = wx.TextCtrl( self.Panel_XRay, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_Intensity.SetMaxLength( 0 ) 
+		self.Field_Intensity.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_Intensity.SetToolTipString( u"Intensity of the beam" )
+		
 		bSizer65.Add( self.Field_Intensity, 0, wx.ALL, 5 )
 		
 		self.m_staticText25 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"Photons/(s * mm^2)", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -159,16 +182,23 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText16 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"dpsf", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText16.Wrap( -1 )
+		self.m_staticText16.Hide()
+		self.m_staticText16.SetToolTipString( u"detector point spread function:\nresolving capacity of the detector for focus determination" )
 		self.m_staticText16.SetMaxSize( wx.Size( 100,-1 ) )
 		
 		bSizer66.Add( self.m_staticText16, 0, wx.ALL, 5 )
 		
 		self.Field_dpsf = wx.TextCtrl( self.Panel_XRay, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_dpsf.SetMaxLength( 0 ) 
+		self.Field_dpsf.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_dpsf.Hide()
+		
 		bSizer66.Add( self.Field_dpsf, 0, wx.ALL, 5 )
 		
 		self.m_staticText26 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText26.Wrap( -1 )
+		self.m_staticText26.Hide()
+		
 		bSizer66.Add( self.m_staticText26, 0, wx.ALL, 5 )
 		
 		
@@ -190,10 +220,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText151 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText151.Wrap( -1 )
+		self.m_staticText151.SetToolTipString( u"lens curvature:\nradius of virtual sphere on the central point of the lens" )
+		
 		bSizer651.Add( self.m_staticText151, 0, wx.ALL, 5 )
 		
 		self.Field_R = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_R.SetMaxLength( 0 ) 
+		self.Field_R.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_R.SetToolTipString( u"lens curvature:\nradius of virtual sphere on the central point of the lens" )
+		
 		bSizer651.Add( self.Field_R, 0, wx.ALL, 5 )
 		
 		self.m_staticText251 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -207,10 +242,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText152 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R_0:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText152.Wrap( -1 )
+		self.m_staticText152.SetToolTipString( u"2*R_0 = lens height" )
+		
 		bSizer652.Add( self.m_staticText152, 0, wx.ALL, 5 )
 		
 		self.Field_R_0 = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_R_0.SetMaxLength( 0 ) 
+		self.Field_R_0.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_R_0.SetToolTipString( u"2*R_0 = lens height" )
+		
 		bSizer652.Add( self.Field_R_0, 0, wx.ALL, 5 )
 		
 		self.m_staticText252 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -226,6 +266,9 @@ class BuilderFrame ( wx.Frame ):
 		bSizer653.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
 		self.Check_RWLock = wx.CheckBox( self.m_panel7, wx.ID_ANY, u"lock R_0 to W", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Check_RWLock.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Check_RWLock.SetToolTipString( u"R_0 depending on thickness (W) and curvature (R)" )
+		
 		bSizer653.Add( self.Check_RWLock, 0, wx.ALL, 5 )
 		
 		
@@ -241,10 +284,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText154 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"d:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText154.Wrap( -1 )
+		self.m_staticText154.SetToolTipString( u"lens thickness at the tightest point" )
+		
 		bSizer654.Add( self.m_staticText154, 0, wx.ALL, 5 )
 		
 		self.Field_d = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_d.SetMaxLength( 0 ) 
+		self.Field_d.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_d.SetToolTipString( u"lens thickness at the tightest point" )
+		
 		bSizer654.Add( self.Field_d, 0, wx.ALL, 5 )
 		
 		self.m_staticText254 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -258,10 +306,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText155 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"N:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText155.Wrap( -1 )
+		self.m_staticText155.SetToolTipString( u"Number of lenses" )
+		
 		bSizer655.Add( self.m_staticText155, 0, wx.ALL, 5 )
 		
 		self.Field_N = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_N.SetMaxLength( 0 ) 
+		self.Field_N.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_N.SetToolTipString( u"Number of lenses" )
+		
 		bSizer655.Add( self.Field_N, 0, wx.ALL, 5 )
 		
 		self.m_staticText255 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"#Lenses", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -275,10 +328,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText156 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"roughness", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText156.Wrap( -1 )
+		self.m_staticText156.SetToolTipString( u"roughness on lens surface" )
+		
 		bSizer656.Add( self.m_staticText156, 0, wx.ALL, 5 )
 		
 		self.Field_rough = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_rough.SetMaxLength( 0 ) 
+		self.Field_rough.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_rough.SetToolTipString( u"roughness on lens surface" )
+		
 		bSizer656.Add( self.Field_rough, 0, wx.ALL, 5 )
 		
 		self.m_staticText256 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -292,10 +350,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText1561 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"W:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1561.Wrap( -1 )
+		self.m_staticText1561.SetToolTipString( u"lens thickness (in beam direction)" )
+		
 		bSizer6561.Add( self.m_staticText1561, 0, wx.ALL, 5 )
 		
 		self.Field_W = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_W.SetMaxLength( 0 ) 
+		self.Field_W.SetBackgroundColour( wx.Colour( 251, 252, 148 ) )
+		self.Field_W.SetToolTipString( u"lens thickness (in beam direction)" )
+		
 		bSizer6561.Add( self.Field_W, 0, wx.ALL, 5 )
 		
 		self.m_staticText2561 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -321,7 +384,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		Box_MaterialChoices = [ u"Al", u"Al203", u"B", u"Be", u"B4C", u"C", u"Li", u"LiF", u"Mg", u"Ni", u"PC", u"PEEK", u"Si", u"Custom" ]
 		self.Box_Material = wx.Choice( self.Panel_CRLens, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, Box_MaterialChoices, 0 )
-		self.Box_Material.SetSelection( 0 )
+		self.Box_Material.SetSelection( 3 )
 		bSizer46.Add( self.Box_Material, 0, wx.ALL, 5 )
 		
 		
@@ -334,10 +397,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText18 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"Density", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText18.Wrap( -1 )
+		self.m_staticText18.SetToolTipString( u"density of lens material" )
+		
 		bSizer68.Add( self.m_staticText18, 0, wx.ALL, 5 )
 		
 		self.Field_Density = wx.TextCtrl( self.Panel_CRLens, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_Density.SetMaxLength( 0 ) 
+		self.Field_Density.SetBackgroundColour( wx.Colour( 209, 252, 148 ) )
+		self.Field_Density.SetToolTipString( u"density of lens material" )
+		
 		bSizer68.Add( self.Field_Density, 0, wx.ALL, 5 )
 		
 		self.m_staticText27 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"g/cm^3", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -351,10 +419,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText19 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"delta/rho", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText19.Wrap( -1 )
+		self.m_staticText19.SetToolTipString( u"index of refraction divided by the material density" )
+		
 		bSizer69.Add( self.m_staticText19, 0, wx.ALL, 5 )
 		
 		self.Field_delta = wx.TextCtrl( self.Panel_CRLens, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_delta.SetMaxLength( 0 ) 
+		self.Field_delta.SetBackgroundColour( wx.Colour( 209, 252, 148 ) )
+		self.Field_delta.SetToolTipString( u"index of refraction divided by the material density" )
+		
 		bSizer69.Add( self.Field_delta, 0, wx.ALL, 5 )
 		
 		self.m_staticText28 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"cm^3/g", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -368,10 +441,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText110 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"mu/rho", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText110.Wrap( -1 )
+		self.m_staticText110.SetToolTipString( u"mass attenuation coefficient" )
+		
 		bSizer610.Add( self.m_staticText110, 0, wx.ALL, 5 )
 		
 		self.Field_mu = wx.TextCtrl( self.Panel_CRLens, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_mu.SetMaxLength( 0 ) 
+		self.Field_mu.SetBackgroundColour( wx.Colour( 209, 252, 148 ) )
+		self.Field_mu.SetToolTipString( u"mass attenuation coefficient" )
+		
 		bSizer610.Add( self.Field_mu, 0, wx.ALL, 5 )
 		
 		self.m_staticText29 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"cm^2/g", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -394,10 +472,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText161 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"f:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText161.Wrap( -1 )
+		self.m_staticText161.SetToolTipString( u"distance bewteen principle plane and focus" )
+		
 		bSizer661.Add( self.m_staticText161, 0, wx.ALL, 5 )
 		
 		self.Field_f = wx.TextCtrl( self.Panel_LensProp, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_f.SetMaxLength( 0 ) 
+		self.Field_f.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.Field_f.SetToolTipString( u"distance bewteen principle plane and focus" )
+		
 		bSizer661.Add( self.Field_f, 0, wx.ALL, 5 )
 		
 		self.m_staticText261 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -411,10 +494,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText162 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"H:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText162.Wrap( -1 )
+		self.m_staticText162.SetToolTipString( u"difference between mirror plane and principle plane" )
+		
 		bSizer662.Add( self.m_staticText162, 0, wx.ALL, 5 )
 		
 		self.Field_H = wx.TextCtrl( self.Panel_LensProp, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_H.SetMaxLength( 0 ) 
+		self.Field_H.SetToolTipString( u"difference between mirror plane and principle plane" )
+		
 		bSizer662.Add( self.Field_H, 0, wx.ALL, 5 )
 		
 		self.m_staticText262 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -428,10 +515,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText163 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"D_eff", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText163.Wrap( -1 )
+		self.m_staticText163.SetToolTipString( u"effective aperture for diffraction and roughness" )
+		
 		bSizer663.Add( self.m_staticText163, 0, wx.ALL, 5 )
 		
 		self.Field_Deff = wx.TextCtrl( self.Panel_LensProp, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_Deff.SetMaxLength( 0 ) 
+		self.Field_Deff.SetToolTipString( u"effective aperture for diffraction and roughness" )
+		
 		bSizer663.Add( self.Field_Deff, 0, wx.ALL, 5 )
 		
 		self.m_staticText263 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -445,10 +536,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText164 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"N.A.:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText164.Wrap( -1 )
+		self.m_staticText164.SetToolTipString( u"numeric aperture" )
+		
 		bSizer664.Add( self.m_staticText164, 0, wx.ALL, 5 )
 		
 		self.Field_NA = wx.TextCtrl( self.Panel_LensProp, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_NA.SetMaxLength( 0 ) 
+		self.Field_NA.SetToolTipString( u"numeric aperture" )
+		
 		bSizer664.Add( self.Field_NA, 0, wx.ALL, 5 )
 		
 		self.m_staticText264 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -462,10 +557,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText165 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"T_p", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText165.Wrap( -1 )
+		self.m_staticText165.SetToolTipString( u"Transmission" )
+		
 		bSizer665.Add( self.m_staticText165, 0, wx.ALL, 5 )
 		
 		self.Field_Tp = wx.TextCtrl( self.Panel_LensProp, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_Tp.SetMaxLength( 0 ) 
+		self.Field_Tp.SetToolTipString( u"Transmission" )
+		
 		bSizer665.Add( self.Field_Tp, 0, wx.ALL, 5 )
 		
 		self.m_staticText265 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -479,10 +578,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText166 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"Cross section", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText166.Wrap( -1 )
+		self.m_staticText166.SetToolTipString( u"sigma value of the focus" )
+		
 		bSizer666.Add( self.m_staticText166, 0, wx.ALL, 5 )
 		
 		self.Field_CrossSection = wx.TextCtrl( self.Panel_LensProp, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_CrossSection.SetMaxLength( 0 ) 
+		self.Field_CrossSection.SetToolTipString( u"sigma value of the focus" )
+		
 		bSizer666.Add( self.Field_CrossSection, 0, wx.ALL, 5 )
 		
 		self.m_staticText266 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"mm^2", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -505,10 +608,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText111 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"b:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText111.Wrap( -1 )
+		self.m_staticText111.SetToolTipString( u"distance between mirror plane and image" )
+		
 		bSizer611.Add( self.m_staticText111, 0, wx.ALL, 5 )
 		
 		self.Field_b = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_b.SetMaxLength( 0 ) 
+		self.Field_b.SetToolTipString( u"distance between mirror plane and image" )
+		
 		bSizer611.Add( self.Field_b, 0, wx.ALL, 5 )
 		
 		self.m_staticText210 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -522,10 +629,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText112 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L1:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText112.Wrap( -1 )
+		self.m_staticText112.SetToolTipString( u"distance between source and principle plane" )
+		
 		bSizer612.Add( self.m_staticText112, 0, wx.ALL, 5 )
 		
 		self.Field_L1 = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_L1.SetMaxLength( 0 ) 
+		self.Field_L1.SetToolTipString( u"distance between source and principle plane" )
+		
 		bSizer612.Add( self.Field_L1, 0, wx.ALL, 5 )
 		
 		self.m_staticText211 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -539,10 +650,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText1411 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L2:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1411.Wrap( -1 )
+		self.m_staticText1411.SetToolTipString( u"distance between principle plane and image" )
+		
 		bSizer6411.Add( self.m_staticText1411, 0, wx.ALL, 5 )
 		
 		self.Field_L2 = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_L2.SetMaxLength( 0 ) 
+		self.Field_L2.SetToolTipString( u"distance between principle plane and image" )
+		
 		bSizer6411.Add( self.Field_L2, 0, wx.ALL, 5 )
 		
 		self.m_staticText2411 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"mm", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -605,10 +720,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText141 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"magnitude:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText141.Wrap( -1 )
+		self.m_staticText141.SetToolTipString( u"magnification of the image setup" )
+		
 		bSizer641.Add( self.m_staticText141, 0, wx.ALL, 5 )
 		
 		self.Field_magn = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_magn.SetMaxLength( 0 ) 
+		self.Field_magn.SetToolTipString( u"magnification of the image setup" )
+		
 		bSizer641.Add( self.Field_magn, 0, wx.ALL, 5 )
 		
 		self.m_staticText241 = wx.StaticText( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -639,10 +758,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		self.m_staticText167 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"flux:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText167.Wrap( -1 )
+		self.m_staticText167.SetToolTipString( u"cross sections times intensity" )
+		
 		bSizer667.Add( self.m_staticText167, 0, wx.ALL, 5 )
 		
 		self.Field_flux = wx.TextCtrl( self.Panel_Results, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.Field_flux.SetMaxLength( 0 ) 
+		self.Field_flux.SetToolTipString( u"cross sections times intensity" )
+		
 		bSizer667.Add( self.Field_flux, 0, wx.ALL, 5 )
 		
 		self.m_staticText267 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"Photons/s", wx.DefaultPosition, wx.DefaultSize, 0 )
