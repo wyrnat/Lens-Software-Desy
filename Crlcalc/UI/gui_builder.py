@@ -17,7 +17,7 @@ import wx.xrc
 class BuilderFrame ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version 2.1.1 (3/2/2106)", pos = wx.DefaultPosition, size = wx.Size( 987,820 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version 2.2 (2/3/2106)", pos = wx.DefaultPosition, size = wx.Size( 987,820 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		
@@ -38,7 +38,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"energy", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"energy:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1.Wrap( -1 )
 		self.m_staticText1.SetToolTipString( u"beam energy" )
 		
@@ -61,7 +61,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer61 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText113 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"wavelength", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText113 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"wavelength:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText113.Wrap( -1 )
 		self.m_staticText113.SetToolTipString( u"beam wavelength" )
 		
@@ -95,7 +95,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer62 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText12 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"horizontal", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText12 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"horizontal:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText12.Wrap( -1 )
 		bSizer62.Add( self.m_staticText12, 0, wx.ALL, 5 )
 		
@@ -114,7 +114,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer63 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText13 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"vertical", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText13 = wx.StaticText( self.Panel_XRay, wx.ID_ANY, u"vertical:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText13.Wrap( -1 )
 		bSizer63.Add( self.m_staticText13, 0, wx.ALL, 5 )
 		
@@ -218,7 +218,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer651 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText151 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText151 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText151.Wrap( -1 )
 		self.m_staticText151.SetToolTipString( u"lens curvature:\nradius of virtual sphere on the central point of the lens" )
 		
@@ -240,7 +240,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer652 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText152 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R_0", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText152 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"R_0:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText152.Wrap( -1 )
 		self.m_staticText152.SetToolTipString( u"2*R_0 = lens height" )
 		
@@ -282,7 +282,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer654 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText154 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"d", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText154 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"d:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText154.Wrap( -1 )
 		self.m_staticText154.SetToolTipString( u"lens thickness at the tightest point" )
 		
@@ -304,7 +304,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer655 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText155 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"N", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText155 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"N:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText155.Wrap( -1 )
 		self.m_staticText155.SetToolTipString( u"Number of lenses" )
 		
@@ -348,7 +348,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6561 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1561 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"W", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1561 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"W:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1561.Wrap( -1 )
 		self.m_staticText1561.SetToolTipString( u"lens thickness (in beam direction)" )
 		
@@ -459,6 +459,14 @@ class BuilderFrame ( wx.Frame ):
 		
 		sbSizer2.Add( bSizer610, 0, wx.EXPAND, 5 )
 		
+		bSizer461 = wx.BoxSizer( wx.VERTICAL )
+		
+		self.Button_Save = wx.Button( self.Panel_CRLens, wx.ID_ANY, u"Save current configuration", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer461.Add( self.Button_Save, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		
+		
+		sbSizer2.Add( bSizer461, 0, wx.EXPAND, 5 )
+		
 		
 		self.Panel_CRLens.SetSizer( sbSizer2 )
 		self.Panel_CRLens.Layout()
@@ -470,7 +478,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer661 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText161 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"f", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText161 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"f:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText161.Wrap( -1 )
 		self.m_staticText161.SetToolTipString( u"distance bewteen principle plane and focus" )
 		
@@ -492,7 +500,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer662 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText162 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"H", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText162 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"H:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText162.Wrap( -1 )
 		self.m_staticText162.SetToolTipString( u"difference between mirror plane and principle plane" )
 		
@@ -534,7 +542,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer664 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText164 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"N.A.", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText164 = wx.StaticText( self.Panel_LensProp, wx.ID_ANY, u"N.A.:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText164.Wrap( -1 )
 		self.m_staticText164.SetToolTipString( u"numeric aperture" )
 		
@@ -606,7 +614,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer611 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText111 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"b", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText111 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"b:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText111.Wrap( -1 )
 		self.m_staticText111.SetToolTipString( u"distance between mirror plane and image" )
 		
@@ -627,7 +635,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer612 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText112 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L1", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText112 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L1:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText112.Wrap( -1 )
 		self.m_staticText112.SetToolTipString( u"distance between source and principle plane" )
 		
@@ -648,7 +656,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6411 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1411 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L2", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1411 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"L2:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1411.Wrap( -1 )
 		self.m_staticText1411.SetToolTipString( u"distance between principle plane and image" )
 		
@@ -681,7 +689,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer621 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText121 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"horizontal", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText121 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"horizontal:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText121.Wrap( -1 )
 		bSizer621.Add( self.m_staticText121, 0, wx.ALL, 5 )
 		
@@ -698,7 +706,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer631 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText131 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"vertical", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText131 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"vertical:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText131.Wrap( -1 )
 		bSizer631.Add( self.m_staticText131, 0, wx.ALL, 5 )
 		
@@ -739,7 +747,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer657 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText153 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"gain", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText153 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"gain:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText153.Wrap( -1 )
 		bSizer657.Add( self.m_staticText153, 0, wx.ALL, 5 )
 		
@@ -756,7 +764,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer667 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText167 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"flux", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText167 = wx.StaticText( self.Panel_Results, wx.ID_ANY, u"flux:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText167.Wrap( -1 )
 		self.m_staticText167.SetToolTipString( u"cross sections times intensity" )
 		
@@ -788,7 +796,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6611 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"diff. limit", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"diff. limit:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1611.Wrap( -1 )
 		bSizer6611.Add( self.m_staticText1611, 0, wx.ALL, 5 )
 		
@@ -820,6 +828,15 @@ class BuilderFrame ( wx.Frame ):
 		
 		sbSizer31.Add( bSizer6621, 0, wx.EXPAND, 5 )
 		
+		bSizer66611 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText16611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"Corrected Image Size:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.m_staticText16611.Wrap( -1 )
+		bSizer66611.Add( self.m_staticText16611, 0, wx.ALL, 5 )
+		
+		
+		sbSizer31.Add( bSizer66611, 0, wx.EXPAND, 5 )
+		
 		bSizer6631 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText1631 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"microbeam DOF", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
@@ -837,21 +854,9 @@ class BuilderFrame ( wx.Frame ):
 		
 		sbSizer31.Add( bSizer6631, 0, wx.EXPAND, 5 )
 		
-		self.m_staticline6 = wx.StaticLine( self.Panel_diffraction, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
-		sbSizer31.Add( self.m_staticline6, 0, wx.EXPAND |wx.ALL, 5 )
-		
-		bSizer66611 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText16611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"Corrected Image Size:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.m_staticText16611.Wrap( -1 )
-		bSizer66611.Add( self.m_staticText16611, 0, wx.ALL, 5 )
-		
-		
-		sbSizer31.Add( bSizer66611, 0, wx.EXPAND, 5 )
-		
 		bSizer6641 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1641 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"horizontal", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1641 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"horizontal:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1641.Wrap( -1 )
 		bSizer6641.Add( self.m_staticText1641, 0, wx.ALL, 5 )
 		
@@ -868,7 +873,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer6651 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1651 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"vertical", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1651 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"vertical:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1651.Wrap( -1 )
 		bSizer6651.Add( self.m_staticText1651, 0, wx.ALL, 5 )
 		
@@ -883,12 +888,9 @@ class BuilderFrame ( wx.Frame ):
 		
 		sbSizer31.Add( bSizer6651, 0, wx.EXPAND, 5 )
 		
-		self.m_staticline7 = wx.StaticLine( self.Panel_diffraction, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
-		sbSizer31.Add( self.m_staticline7, 0, wx.EXPAND |wx.ALL, 5 )
-		
 		bSizer6661 = wx.BoxSizer( wx.HORIZONTAL )
 		
-		self.m_staticText1661 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"gain", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText1661 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"gain:", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
 		self.m_staticText1661.Wrap( -1 )
 		bSizer6661.Add( self.m_staticText1661, 0, wx.ALL, 5 )
 		
@@ -946,6 +948,7 @@ class BuilderFrame ( wx.Frame ):
 		self.Field_Density.Bind( wx.EVT_TEXT, self.onDensityChange )
 		self.Field_delta.Bind( wx.EVT_TEXT, self.onDeltaChanged )
 		self.Field_mu.Bind( wx.EVT_TEXT, self.onmuChanged )
+		self.Button_Save.Bind( wx.EVT_BUTTON, self.onSave )
 	
 	def __del__( self ):
 		pass
@@ -1001,6 +1004,9 @@ class BuilderFrame ( wx.Frame ):
 		event.Skip()
 	
 	def onmuChanged( self, event ):
+		event.Skip()
+	
+	def onSave( self, event ):
 		event.Skip()
 	
 

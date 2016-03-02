@@ -234,5 +234,8 @@ class Gui(BuilderFrame):
     def onWChanged(self, event):
         self.myobservable.informObserver("onWChanged")
         
+    def onSave(self, event):
+        self.myobservable.informObserver("save")
+        
         
         

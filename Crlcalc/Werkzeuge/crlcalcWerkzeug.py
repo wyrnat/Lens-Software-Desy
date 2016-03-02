@@ -9,13 +9,15 @@ Created on 25.06.2015
 # sys.path.append('..')
 
 # import the used classes
-from Services import abbildungsgeometrie
+import Services.abbildungsgeometrie as abbildungsgeometrie
 import Services.linse as linse
 import Services.diffraction as diffraction
 import Services.spline as spline
+import Services.ioService as ioService
 import Fachwerte.inputValues as inVal
 import Fachwerte.outputValues as outVal
 import UI.crlcalcUI as UI
+
 
 
 class CrlcalcWerkzeug(object):
@@ -33,6 +35,10 @@ class CrlcalcWerkzeug(object):
         # instance of values
         self.inVal = inVal.InputValues()
         self.outVal = outVal.OutputValues()
+        
+        # load custom start values
+        io = ioService.IO
+        io.loadFromFile(self.inVal, self.outVal)
         
         #instance of Gui and register as observer of the Gui
         self.gui = UI.Gui()
@@ -72,6 +78,9 @@ class CrlcalcWerkzeug(object):
         elif (reason == "onWChanged"):
             validness = self.calcWChanged()
             self.FieldFactoring('W', "W has not a valid value", successful=validness)
+        elif (reason == "save"):
+            io = ioService.IO
+            io.saveToFile(self.inVal, self.outVal)
         else:
             validness = self.inVal.setValue(reason, self.gui.getFieldInputValue(reason))
             mymessage = reason + " has not a valid value"

@@ -21,6 +21,12 @@ class SpLine(object):
         >> In case of Energy Change, the method calcSpline has to be called
         """
         
+        if inVal.getValue('material_choice') == 13:
+            self.delta_values = [0]
+            self.mu_values = [0]
+            self.energy_values = [0]
+            return
+        
         # Read-out values from .dat-file
         self.delta_values = []
         self.mu_values = []
@@ -143,11 +149,14 @@ class SpLine(object):
         #mu = self.calcCubicSpline(e, self.energy_values, self.mu_values)
         
         """ Calculating from existing cs-Function """
-        delta = self.csf_delta(e)
-        mu = self.csf_mu(e)
+        if inVal.getValue('material_choice') == 13:
+            return True
+        else:
+            delta = self.csf_delta(e)
+            mu = self.csf_mu(e)
          
-        # returns True, if both values were set successful
-        return ( inVal.setValue('delta', delta) and inVal.setValue('mu', mu ) )
+            # returns True, if both values were set successful
+            return ( inVal.setValue('delta', delta) and inVal.setValue('mu', mu ) )
         
         
     def getNearestXvalue(self, x, up = 0):
