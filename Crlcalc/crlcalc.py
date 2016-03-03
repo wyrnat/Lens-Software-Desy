@@ -25,7 +25,7 @@ except:
     exit()
 
 try:
-    from Services import spline, abbildungsgeometrie, diffraction, linse
+    from Services import spline, abbildungsgeometrie, diffraction, linse, ioService
 except:
     print "Services or Service Class missing. Please add the package or the file to the path"
     exit()
@@ -45,8 +45,6 @@ except:
 
 """
 TODO: Bilder auf Homepage
-TODO: Datei mit allen Werten speicherbar
-TODO: Meeting Jan-Eric wegen Django
 """
 
 app = wx.PySimpleApp()
