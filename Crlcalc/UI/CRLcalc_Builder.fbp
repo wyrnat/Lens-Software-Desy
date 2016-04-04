@@ -47,7 +47,7 @@
             <property name="size">987,820</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass"></property>
-            <property name="title">CRLcalc - Offline Test Version 2.2.1 (3/3/2106)</property>
+            <property name="title">CRLcalc - Offline Test Version 2.3 (4/4/2106)</property>
             <property name="tooltip"></property>
             <property name="window_extra_style"></property>
             <property name="window_name"></property>

@@ -4,10 +4,6 @@ Created on 25.06.2015
 @author: Woehnert
 '''
 
-#TODO: diesen Teil webfaehig machen
-# import sys
-# sys.path.append('..')
-
 # import the used classes
 import Services.abbildungsgeometrie as abbildungsgeometrie
 import Services.linse as linse

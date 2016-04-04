@@ -1,3 +1,10 @@
+'''
+Created on 3.06.2015
+
+@author: Woehnert
+'''
+
+
 """ Libraries """
 try:
     import wx
@@ -44,7 +51,7 @@ except:
 
 
 """
-TODO: Bilder auf Homepage
+TODO: alternativen W-Parameter einfuegen
 """
 
 app = wx.PySimpleApp()

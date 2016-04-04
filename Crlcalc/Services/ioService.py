@@ -1,7 +1,7 @@
 '''
 Created on 02.03.2016
 
-@author: jannik
+@author: Woehnert
 '''
 
 import os
@@ -18,7 +18,7 @@ class IO(object):
         Saves input and output values into a human and machine readable data file
         @param inval: input values
         @param outval: output values
-        @note: creates file of "params.dat does not exists
+        @note: creates file if "params.dat" does not exists
         """
         path = os.getcwd()+"/Werkzeuge/params.dat"
         myfile = open(path, 'w+')

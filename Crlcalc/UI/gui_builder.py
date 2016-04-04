@@ -17,7 +17,7 @@ import wx.xrc
 class BuilderFrame ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version 2.2.1 (3/3/2106)", pos = wx.DefaultPosition, size = wx.Size( 987,820 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"CRLcalc - Offline Test Version 2.3 (4/4/2106)", pos = wx.DefaultPosition, size = wx.Size( 987,820 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 		
 		self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 		

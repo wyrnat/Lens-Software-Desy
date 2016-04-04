@@ -107,7 +107,7 @@ class Gui(BuilderFrame):
     
     def getFieldOutputValue(self, name):
         """
-        Returns the value of the Field cooesponding to name
+        Returns the value of the Field corresponding to name
         @param name: (String) the key for the dictionary 'list'
         @return: The Value of the Field corresponding to name
         """

@@ -1,3 +1,10 @@
+'''
+Created on 11.03.2015
+
+@author: Woehnert
+'''
+
+
 import numpy
 
 class Linse (object):
@@ -25,7 +32,7 @@ class Linse (object):
         """Output Fachwerte"""
         # f >> uncorrelated focal length 
         # f_corr >> correlated focal length >> 'f'
-        # T >> Transmission per area >> 'T'
+        # T >> Transmission per area >> 'T_p'
         # Tr >> all-of-lens transmission
         # a >> transmission exponent
         # a_eff >> effective aperture for absorption
@@ -81,7 +88,7 @@ class Linse (object):
     def getAp(self, mu, N, R_0, R, delta, rough, energy):
         assert (R!=0), "R = 0 leads to division by zero"
         e2k = self.gete2k(energy)
-        return mu * N * R_0**2 / 2. / R + N * delta * e2k * rough * (R_0/R)**2
+        return mu * N * R_0**2 / 2. / R + N * (delta * e2k * rough)**2 * (R_0/R)**2
     
     def gete2k(self, energy):
         return 2 * numpy.pi * energy / 12398.52 * 1e7
