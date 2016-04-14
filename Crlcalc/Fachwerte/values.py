@@ -41,6 +41,17 @@ class Values(object):
             return self.params[name].getValue()
         else:
             return None
+        
+    def getTooltip(self, name):
+        """
+        Returns information about the value in 
+        case of existence, else None
+        @return: (str) values tooltip
+        """
+        if name in self.params:
+            return self.params[name].getTooltip()
+        else:
+            return None
     
     def getValues(self):
         """
@@ -63,6 +74,13 @@ class Values(object):
                 return self.params[name].getValue()
             else:
                 return "%.4g" % self.params[name].getValue()
+        return None
+            
+#     def getValueForWebsite(self, name):
+#         if name in self.params:
+#             if self.params[name].GetType() == bool:
+#                 return self.params[name].getValue()
+#             elif 
             
             
     def getObj(self, name):

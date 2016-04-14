@@ -5,6 +5,8 @@ Created on 25.06.2015
 '''
 from .values import Values
 from .valProp import ValProp
+from toolTips import inTips
+
 
 class InputValues(Values):
     '''
@@ -34,6 +36,9 @@ class InputValues(Values):
                        'mu': ValProp(1., float, min_value=0.),                                #cm**2/g
                        'N': ValProp(50, int, min_value = 0),
                        'd': ValProp(0.010, float),                              #mm
-                       'rough': ValProp(0.1, float),                            #mm
+                       'rough': ValProp(0., float),                            #mm
                         'W': ValProp(1., float)                                 #mm
                        }
+        
+        for param in self.params:
+            self.params[param].setTooltip(inTips[param])

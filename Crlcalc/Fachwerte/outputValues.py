@@ -5,6 +5,7 @@ Created on 25.0.6.20.15
 '''
 from .values import Values
 from .valProp import ValProp
+from toolTips import outTips
 
 class OutputValues(Values):
     '''
@@ -37,6 +38,9 @@ class OutputValues(Values):
                        'ISv_corr': ValProp(0.,float),       #mm
                        'gain_corr': ValProp(0.,float)
                        }
+        
+        for param in self.params:
+            self.params[param].setTooltip(outTips[param])
         
 
         

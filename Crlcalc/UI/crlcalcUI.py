@@ -6,6 +6,7 @@ Created on 02.07.2015
 
 from gui_builder import BuilderFrame
 from UI import observable
+from wx import ToolTip
 
 class Gui(BuilderFrame):
     """
@@ -120,6 +121,22 @@ class Gui(BuilderFrame):
         @param val: The value to be set
         """
         self.getFieldOutputList()[name].SetValue(str(val))
+        
+    def setFieldOutTooltip(self, name, mytooltip):
+        """
+        Sets the tooltip of the OutputField
+        @param name: (String) the key for the dictionary 'list'
+        @param tooltip: (str) Information about the field parameter
+        """
+        self.getFieldOutputList()[name].SetToolTip(ToolTip(mytooltip))
+        
+    def setFieldInTooltip(self, name, mytooltip):
+        """
+        Sets the tooltip of the InputField
+        @param name: (String) the key for the dictionary 'list'
+        @param tooltip: (str) Information about the field parameter
+        """
+        self.getFieldInputList()[name].SetToolTip(ToolTip(mytooltip))
     
     def setFieldValidnessIndicator(self, myField, isValid=True):
         """

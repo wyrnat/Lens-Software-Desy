@@ -462,7 +462,16 @@ class BuilderFrame ( wx.Frame ):
 		bSizer461 = wx.BoxSizer( wx.VERTICAL )
 		
 		self.Button_Save = wx.Button( self.Panel_CRLens, wx.ID_ANY, u"Save current configuration", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.Button_Save.SetToolTipString( u"Saves configuration to /Crlcalc/Werkzeuge/params.dat" )
+		
 		bSizer461.Add( self.Button_Save, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		
+		self.m_staticText76 = wx.StaticText( self.Panel_CRLens, wx.ID_ANY, u"saves values to \"/Werkzeuge/params.dat\"", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText76.Wrap( -1 )
+		self.m_staticText76.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), 70, 94, 90, False, wx.EmptyString ) )
+		self.m_staticText76.SetForegroundColour( wx.Colour( 245, 18, 18 ) )
+		
+		bSizer461.Add( self.m_staticText76, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 		
 		
 		sbSizer2.Add( bSizer461, 0, wx.EXPAND, 5 )
@@ -828,15 +837,6 @@ class BuilderFrame ( wx.Frame ):
 		
 		sbSizer31.Add( bSizer6621, 0, wx.EXPAND, 5 )
 		
-		bSizer66611 = wx.BoxSizer( wx.HORIZONTAL )
-		
-		self.m_staticText16611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"Corrected Image Size:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
-		self.m_staticText16611.Wrap( -1 )
-		bSizer66611.Add( self.m_staticText16611, 0, wx.ALL, 5 )
-		
-		
-		sbSizer31.Add( bSizer66611, 0, wx.EXPAND, 5 )
-		
 		bSizer6631 = wx.BoxSizer( wx.HORIZONTAL )
 		
 		self.m_staticText1631 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"microbeam DOF", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
@@ -853,6 +853,18 @@ class BuilderFrame ( wx.Frame ):
 		
 		
 		sbSizer31.Add( bSizer6631, 0, wx.EXPAND, 5 )
+		
+		self.m_staticline6 = wx.StaticLine( self.Panel_diffraction, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+		sbSizer31.Add( self.m_staticline6, 0, wx.EXPAND |wx.ALL, 5 )
+		
+		bSizer66611 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.m_staticText16611 = wx.StaticText( self.Panel_diffraction, wx.ID_ANY, u"Corrected Image Size:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+		self.m_staticText16611.Wrap( -1 )
+		bSizer66611.Add( self.m_staticText16611, 0, wx.ALL, 5 )
+		
+		
+		sbSizer31.Add( bSizer66611, 0, wx.EXPAND, 5 )
 		
 		bSizer6641 = wx.BoxSizer( wx.HORIZONTAL )
 		
@@ -887,6 +899,9 @@ class BuilderFrame ( wx.Frame ):
 		
 		
 		sbSizer31.Add( bSizer6651, 0, wx.EXPAND, 5 )
+		
+		self.m_staticline7 = wx.StaticLine( self.Panel_diffraction, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
+		sbSizer31.Add( self.m_staticline7, 0, wx.EXPAND |wx.ALL, 5 )
 		
 		bSizer6661 = wx.BoxSizer( wx.HORIZONTAL )
 		

@@ -36,9 +36,13 @@ class CrlcalcWerkzeug(object):
         io = ioService.IO
         io.loadFromFile(self.inVal, self.outVal)
         
-        #instance of Gui and register as observer of the Gui
+        #instance of Gui, set tooltips and register as observer of the Gui
         self.gui = UI.Gui()
+        self.setTooltip()
         self.gui.myobservable.registerObserver(self)
+        
+        #set the Frame title to show actual Version name
+        self.gui.SetTitle("CrlCalc - Version 2.4 (14.4.2016) - Created by Jannik Woehnert")
         
         # instance of spline
         self.spline = None
@@ -101,6 +105,16 @@ class CrlcalcWerkzeug(object):
         else:
             newmessage = message + " " + self.inVal.getValueRequirements(myfield)
             self.gui.statusBarPush(newmessage, myfield)
+            
+    def setTooltip(self):
+        inputFields = self.gui.getFieldInputList()
+        outputFields = self.gui.getFieldOutputList()
+        for bezeichner in inputFields:
+            self.gui.setFieldInTooltip(bezeichner, self.inVal.getTooltip(bezeichner))
+        for bezeichner in outputFields:
+            self.gui.setFieldOutTooltip(bezeichner, self.outVal.getTooltip(bezeichner))
+            
+                                                   
             
         
                

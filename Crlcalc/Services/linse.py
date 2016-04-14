@@ -56,7 +56,7 @@ class Linse (object):
         R_0 = inVal.getValue('R_0')
         #TODO nachfragen
         delta = inVal.getValue('delta') * inVal.getValue('density')
-        mu = inVal.getValue('mu') * inVal.getValue('density') /10. # factor 10 due to units [mm/cm]
+        mu = inVal.getValue('mu')  * inVal.getValue('density') / 10. # [mu] = 1/cm = 1/10mm
         N = inVal.getValue('N')
         d = inVal.getValue('d')
         rough = inVal.getValue('rough')
@@ -92,10 +92,6 @@ class Linse (object):
     
     def gete2k(self, energy):
         return 2 * numpy.pi * energy / 12398.52 * 1e7
-    
-    def getDeff_part(self, mu, N, R, delta, rough, energy):
-        e2k = self.gete2k(energy)
-        return mu * N * R + 2*N*(e2k * delta * rough)**2
     
     # ---Methods---
         
@@ -139,20 +135,16 @@ class Linse (object):
     
     def geta_eff(self, mu, N, R_0, R, delta, rough, energy):
         a_p = self.getAp(mu, N, R_0, R, delta, rough, energy)
-        assert(a_p<0), "negative a_p-Value leads imaginary result"
+        assert(a_p>0), "negative a_p-Value leads to imaginary result"
         assert(mu>0), "mu has to be greater than zero"
         assert(N>0), "N has to be greater than zero"
         assert(R>=0), "R needs to be positive"
         return 2 * float( numpy.sqrt( R / mu / N *  (1 - numpy.exp(-a_p)) ) )
-    
-    def getD_eff_old(self, mu, N, R, R_0, delta, rough, energy):
-        deff_part = self.getDeff_part(mu, N, R, delta, rough, energy)
-        assert (deff_part>0), "deff_part has to be greater than zero"
-        assert (R>=0), "R shall not be negative"
-        return 2 * float( numpy.sqrt(2*R**2 / deff_part * (1 - numpy.exp(-deff_part / 2. * (R_0/R)**2)) ) )
+
     
     def getD_eff(self, mu, N, R, R_0, delta, rough, energy):
         a_p = self.getAp(mu, N, R_0, R, delta, rough, energy)
+        assert(a_p!=0), "a_p = 0 leads to division by zero"
         return 2*R_0 * float( numpy.sqrt((1-numpy.exp(-a_p)) /a_p ) )
     
     def getsigma(self, mu, N, R_0, R, d, delta, rough, energy):

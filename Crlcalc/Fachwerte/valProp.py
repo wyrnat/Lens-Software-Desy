@@ -9,7 +9,7 @@ class ValProp(object):
     '''
 
 
-    def __init__(self, value, mytype, min_value = None, max_value = None):
+    def __init__(self, value, mytype, min_value = None, max_value = None, tooltip=None):
         '''
         Set value and type of the value.
         min_value and max_value are optional
@@ -34,6 +34,19 @@ class ValProp(object):
         #set value
         if not (self.setValue(value)):
             print "value "+ str(value)+ " not settable"
+        
+        #set tooltip    
+        if tooltip==None:
+            self.tooltip = (
+                            '['+str(self.mytype)+
+                            '|min value: '+str(self.min_value)+
+                            '|max value: '+str(self.max_value)+
+                            ']'
+                            )
+        elif type(tooltip) == str:
+            self.tooltip = tooltip
+        else:
+            print "tooltip "+str(tooltip)+" not of type "+str(type(str))
                 
             
             
@@ -80,6 +93,21 @@ class ValProp(object):
         @return: max_value
         """
         return self.max_value
+    
+    def getTooltip(self):
+        """
+        returns value information
+        @return tooltip
+        """
+        return self.tooltip
+    
+    def setTooltip(self, tooltip):
+        """
+        Sets value information if from type <str>
+        @param tooltip: (str) value information
+        """
+        if type(tooltip) == str:
+            self.tooltip=tooltip
     
     def isValueSettable(self, value):
         """
