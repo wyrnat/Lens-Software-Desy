@@ -40,7 +40,7 @@
        <property name="title">
         <string>X-Ray Source and Detector</string>
        </property>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="Field_Energy">
         <property name="geometry">
          <rect>
           <x>60</x>
@@ -50,7 +50,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="Name_Energy">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -63,7 +63,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="Unit_Energy">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -76,7 +76,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_2">
+       <widget class="QLineEdit" name="Field_WaveLength">
         <property name="geometry">
          <rect>
           <x>60</x>
@@ -86,7 +86,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="unit_WaveLength">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -99,7 +99,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="Name_WaveLength">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -138,7 +138,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_23">
+       <widget class="QLineEdit" name="Field_SSv">
         <property name="geometry">
          <rect>
           <x>70</x>
@@ -148,7 +148,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_47">
+       <widget class="QLabel" name="Unit_SSv">
         <property name="geometry">
          <rect>
           <x>190</x>
@@ -161,7 +161,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_48">
+       <widget class="QLabel" name="Name_SSv">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -174,7 +174,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_24">
+       <widget class="QLineEdit" name="Field_SSh">
         <property name="geometry">
          <rect>
           <x>70</x>
@@ -184,7 +184,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_49">
+       <widget class="QLabel" name="Unit_SSh">
         <property name="geometry">
          <rect>
           <x>190</x>
@@ -197,7 +197,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_50">
+       <widget class="QLabel" name="Name_SSh">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -223,7 +223,7 @@
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_25">
+       <widget class="QLineEdit" name="Field_g">
         <property name="geometry">
          <rect>
           <x>70</x>
@@ -233,7 +233,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_51">
+       <widget class="QLabel" name="Unit_g">
         <property name="geometry">
          <rect>
           <x>190</x>
@@ -246,7 +246,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_52">
+       <widget class="QLabel" name="Name_g">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -259,7 +259,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_26">
+       <widget class="QLineEdit" name="Field_Intensity">
         <property name="geometry">
          <rect>
           <x>70</x>
@@ -269,7 +269,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_53">
+       <widget class="QLabel" name="Unit_Intensity">
         <property name="geometry">
          <rect>
           <x>190</x>
@@ -282,7 +282,7 @@
          <string>TextLabel</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_54">
+       <widget class="QLabel" name="Name_Intensity">
         <property name="geometry">
          <rect>
           <x>10</x>

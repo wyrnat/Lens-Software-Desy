@@ -4,56 +4,120 @@ Created on 3.06.2015
 @author: Woehnert
 '''
 
+print "start crlcalc.py"
 
 """ Libraries """
+print "...load libraries..."
+wxbool = True
 try:
     import wx
+    print "using wxPython as User Interface"
 except:
-    print "wx package missing. Please install wxPython"
+    print "wx package not found. Searching for PyQt4"
     exit()
+    
+""" Qt-GUI not yet implemented """
+#     try:
+#         import PyQt4
+#         print "Using PyQT4 as User Interface"
+#         wxbool = False
+#     except:
+#         print "wx and PyQt4 package missing. Please install wxPython or PyQt4"
+#         exit()
+#         
 try:
     import numpy
 except:
     print "numpy Package missing. Please install numpy"
     exit()
     
+    
 try:
     import scipy
 except:
     print "scipy Package missing. Please install scipy"
     exit()
+print "--- libraries check"
     
 """ Packages """
+print "...load internal packages..."
+
+try:
+    from Fachwerte import units, toolTips, materials
+except:
+    print "Error in import *Fachwerte* package"
+    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print "Steps for Solution"
+    print "1) Make sure that the files *units.py*, *materials.py* and *tooltips.py* exists"
+    print "2) Check the code for logical and syntax errors"
+    print "3) Check the internal imported packages for 1) and 2)"
+    exit()
     
 try:
-    from Fachwerte import inputValues, outputValues, valProp, values
+    from Materialien import inputValues, outputValues, valProp, values
 except:
-    print "Fachwerte or Fachwert Class missing"
+    print "Error in import *Materialien* package"
+    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print "Steps for Solution"
+    print "1) Make sure that the files *inputValues.py*, *outputValues.py*, *valProp.py* and *values.py* exists"
+    print "2) Check the code for logical and syntax errors"
+    print "3) Check the internal imported packages for 1) and 2)"
     exit()
 
 try:
     from Services import spline, abbildungsgeometrie, diffraction, linse, ioService
 except:
-    print "Services or Service Class missing. Please add the package or the file to the path"
+    print "Error in import *Services* package"
+    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print "Steps for Solution"
+    print "1) Make sure that the files *spline.py*, *abbildungsgeometrie.py*, *diffraction.py*, *linse.py* and *ioService.py* exists"
+    print "2) Check the code for logical and syntax errors"
+    print "3) Check the internal imported packages for 1) and 2)"
     exit()
     
 try:
-    from UI import crlcalcUI, gui_builder, observable
+    if wxbool == True:
+        from UI import crlcalcUI, gui_builder, observable
+    else:
+        from UI import qt_builder, crlcalcQT
 except:
-    print "UI missing or UI class missing. PLease add the Package or the file to the path"
+    print "Error in import *UI* package"
+    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print "Steps for Solution"
+    if wxbool == True:
+        print "1) Make sure that the files *crlcalcUI.py*, *gui_builder.py* and *observable.py* exists"
+    else:
+        print "1) Make sure that the files *crlcalcQT.py* and *qt_builder.py* exists"
+    print "2) Check the code for logical and syntax errors"
+    print "3) Check the internal imported packages for 1) and 2)"
     exit()
 
 try:
     from Werkzeuge import crlcalcWerkzeug
 except:
-    print "crlcalcWerkzeug missing. Maybe in another directory?"
+    print "Error in import *Werkzeuge* package"
+    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print "Steps for Solution"
+    print "1) Make sure that the files *crlcalcWerkzeug.py* exists"
+    print "2) Check the code for logical and syntax errors"
+    print "3) Check the internal imported packages for 1) and 2)"
     exit()
+
+print "--- internal packages check"
 
 
 """
 TODO: alternativen W-Parameter einfuegen
+TODO: QT-GUI
+TODO: Manual schreiben
 """
-
-app = wx.PySimpleApp()
-instance_of_Werkzeug = crlcalcWerkzeug.CrlcalcWerkzeug()
-app.MainLoop()
+if wxbool == True:
+    app = wx.PySimpleApp()
+    instance_of_Werkzeug = crlcalcWerkzeug.CrlcalcWerkzeug()
+    app.MainLoop()
+# else:
+#     import sys
+#     app = PyQt4.QtGui.QApplication(sys.argv)
+#     form = crlcalcQT.CrlcalcQT()
+#     form.show()
+#     app.exec_()

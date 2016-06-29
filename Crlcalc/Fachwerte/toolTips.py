@@ -28,7 +28,7 @@ inTips = {'energy': "Beam energy \n limited from 500ev to 200keV",
           'material_choice': "Choose a lens material for delta and mu calculation",
           'density': "lens material density",                          
           'delta': "index of refraction divided by material density",
-          'mu': "mass attenuation effect value divided by material densitys"
+          'mu': "mass attenuation effect value divided by material density"
           }
 
 outTips = {'f': "focus point distance to the source",          
@@ -46,7 +46,7 @@ outTips = {'f': "focus point distance to the source",
            'gain': "Intensity gain",
            'flux': "Photon flux \n cross section times the intensity",         
            'diff_limit': "Diffraction limit",     
-           'dof': "depth of field",           
+           'dof': "Depth of Field",           
            'mb_dof': "Depth of Field for the microbeam",       
            'ISh_corr': "Image size horizontal \n corrected for above named pertubations",     
            'ISv_corr': "Image size vertical \n corrected for above named pertubations",     

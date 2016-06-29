@@ -7,6 +7,7 @@ Created on 24.06.2015
 import os
 import string
 from scipy import interpolate
+from Fachwerte import materials
 
 class SpLine(object):
     '''
@@ -21,7 +22,8 @@ class SpLine(object):
         >> In case of Energy Change, the method calcSpline has to be called
         """
         
-        if inVal.getValue('material_choice') == 13:
+        # prevent code from trying to load nonexisting delta mu files
+        if materials.material_list[inVal.getValue('material_choice')] == "CUSTOM":
             self.delta_values = [0]
             self.mu_values = [0]
             self.energy_values = [0]
@@ -41,19 +43,9 @@ class SpLine(object):
         path = os.getcwd() + "/Services/elementdata/"
         
         # lists of material files
-        delta_fileList = ["AlD.dat", "AlOD.dat", "BD.dat", "BeD.dat",
-                          "B4CD.dat", "CD.dat", "LiD.dat",
-                          "LiFD.dat", "MgD.dat", "NiD.dat",
-                          "PCD.dat", "PEEKD.dat", "SiD.dat"
-                          ]
-        mu_fileList = ["AlMu.dat", "AlOMu.dat", "BMu.dat", "BeMu.dat",
-                          "B4CMu.dat", "CMu.dat", "LiMu.dat",
-                          "LiFMu.dat", "MgMu.dat", "NiMu.dat",
-                          "PCMu.dat", "PEEKMu.dat", "SiMu.dat"
-                          ]
-        density_list = [ 2.6941, 3.97, 2.34, 1.845,
-                        2.45, 2.26, 0.533, 2.635,
-                        1.845, 8.876, 1.20, 1.3, 2.32 ]
+        delta_fileList = materials.delta_fileList
+        mu_fileList = materials.mu_fileList
+        density_list = materials.density_list
         
         
         # import delta values
@@ -123,7 +115,7 @@ class SpLine(object):
         self.csf_mu = interpolate.interp1d(self.energy_values, self.mu_values, kind='cubic')
         self.csf_delta = interpolate.interp1d(self.energy_values, self.delta_values, kind='cubic')
         
-        #Calculate Fachwerte for main init
+        #Calculate Materialien for main init
         self.splinecalc(inVal, outVal)
         
     def checkConstruction(self):
@@ -149,7 +141,7 @@ class SpLine(object):
         #mu = self.calcCubicSpline(e, self.energy_values, self.mu_values)
         
         """ Calculating from existing cs-Function """
-        if inVal.getValue('material_choice') == 13:
+        if materials.material_list[inVal.getValue('material_choice')] == "CUSTOM":
             return True
         else:
             delta = self.csf_delta(e)
@@ -176,7 +168,7 @@ class SpLine(object):
     def calcLinearSpline(self, x, energy_list, value_list):
         """
         For a non-scipy enviroment:
-        returns the interpolated Output Value out of lists of Fachwerte for given Energy with linear Spline Interpolation.
+        returns the interpolated Output Value out of lists of Materialien for given Energy with linear Spline Interpolation.
         See www.geos.ed.ac.uk/~yliu23/docs/lect_spline.pdf
         """
         i = self.getNearestXvalue(x)

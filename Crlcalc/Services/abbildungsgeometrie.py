@@ -76,7 +76,7 @@ class Abbildungsgeometrie(object):
         magn = self.getmag_corr(L1, L2)
         gain = self.getgain_corr(R_0, f_corr, T, g, b_v, b_h)
         flux = self.getflux(sigma, intensity)
-        NA = self.getNa_corr(f_corr, g, Deff)
+        NA = self.getNa_corr(g, H, Deff)
         diff_limit = self.getdiff_limit_corr(energy, f_corr, g, Deff)
         
         #TODO: if Bedingung ueberdenken. Schlechte Fehlerbehandlung. Werte werden uU. nicht belegt
@@ -171,9 +171,9 @@ class Abbildungsgeometrie(object):
         L2 = self.getL2(f, g)
         return self.calcNA(Deff, L2)
         
-    def getNa_corr(self, f_corr, g, Deff):
-        L2_corr = self.getL2_corr(f_corr, g)
-        return self.calcNA(Deff, L2_corr)
+    def getNa_corr(self, g, h, Deff):
+        L1 = self.getL1(g, h)
+        return self.calcNA(Deff, L1)
 
     # Help methods
 
@@ -209,9 +209,9 @@ class Abbildungsgeometrie(object):
 
     def calcLambda(self, energy):
         assert (energy!=0), "energy=0 leads to division by zero"
-        c = 2.9979 * 1e8
-        h = 6.6256 * 1e-34
-        eV = 1.602 * 1e-19
+        c = 2.9979 * 1e8        # m/s
+        h = 6.6256 * 1e-34      # J*s
+        eV = 1.602 * 1e-19      # q
         return h * c * 1e10 / energy / eV
 
     def calcNA(self, deff, babst):

@@ -3,19 +3,20 @@ Created on 25.0.6.20.15
 
 @author: Woehnert
 '''
-from .values import Values
-from .valProp import ValProp
-from toolTips import outTips
+from values import Values
+from valProp import ValProp
+from Fachwerte.toolTips import outTips
+from Fachwerte.units import outUnits
 
 class OutputValues(Values):
     '''
-    Saves Output Values in a dictionary. Inherits functionality from values.Fachwerte
+    Saves Output Values in a dictionary. Inherits functionality from values.Materialien
     '''
 
 
     def __init__(self):
         '''
-        Provides 'Empty' ValProp Instances for the Fachwerte
+        Provides 'Empty' ValProp Instances for the Materialien
         '''
         self.params = {'f': ValProp(0.,float),              #mm
                        'H': ValProp(0.,float),              #mm
@@ -39,8 +40,12 @@ class OutputValues(Values):
                        'gain_corr': ValProp(0.,float)
                        }
         
+        # add the tooltips to the ValProp objects
         for param in self.params:
-            self.params[param].setTooltip(outTips[param])
+            if param in outTips:
+                self.params[param].setTooltip(outTips[param])
+            if param in outUnits:
+                self.params[param].setUnit(outUnits[param])
         
 
         

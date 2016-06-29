@@ -4446,7 +4446,7 @@
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
-                                                                <property name="choices">&quot;Al&quot; &quot;Al203&quot; &quot;B&quot; &quot;Be&quot; &quot;B4C&quot; &quot;C&quot; &quot;Li&quot; &quot;LiF&quot; &quot;Mg&quot; &quot;Ni&quot; &quot;PC&quot; &quot;PEEK&quot; &quot;Si&quot; &quot;Custom&quot;</property>
+                                                                <property name="choices"></property>
                                                                 <property name="close_button">1</property>
                                                                 <property name="context_help"></property>
                                                                 <property name="context_menu">1</property>

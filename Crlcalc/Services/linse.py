@@ -18,7 +18,7 @@ class Linse (object):
         
         #self.calc(inVal, outVal)
 
-        """Input Fachwerte"""
+        """Input Materialien"""
         # R >> Radius of curvature
         # R_0 >> Lens aperture
         # delta >> index of refraction: real part
@@ -29,7 +29,7 @@ class Linse (object):
         # energy >> light energy
         # W >> lens total thickness along beam axis
         
-        """Output Fachwerte"""
+        """Output Materialien"""
         # f >> uncorrelated focal length 
         # f_corr >> correlated focal length >> 'f'
         # T >> Transmission per area >> 'T_p'

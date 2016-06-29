@@ -25,10 +25,20 @@ class Gui(BuilderFrame):
         #Watch Out, double connection!
         self.myobservable = observable.Observable()
         
+        #set the Frame title to show actual Version name
+        self.SetTitle("CrlCalc - Version 2.4 (14.4.2016) - Created by Jannik Woehnert")
+        
         #StatusBar
         self.StatusBar.PushStatusText("Ready!")
         self.statusSource = []
         self.statusMessage = []
+        
+        #Disable all output fields
+        for field in self.getFieldOutputList():
+            self.getFieldOutputList()[field].Enable(False)
+            self.getFieldOutputList()[field].SetBackgroundColour('white')
+        self.getFieldInputList()['wavelength'].Enable(False)
+        self.getFieldInputList()['wavelength'].SetBackgroundColour('white')
 
 
     def getFieldInputList(self):
@@ -249,7 +259,7 @@ class Gui(BuilderFrame):
         self.myobservable.informObserver("rough")
         
     def onWChanged(self, event):
-        self.myobservable.informObserver("onWChanged")
+        self.myobservable.informObserver("W")
         
     def onSave(self, event):
         self.myobservable.informObserver("save")

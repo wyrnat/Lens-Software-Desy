@@ -3,14 +3,15 @@ Created on 25.06.2015
 
 @author: Woehnert
 '''
-from .values import Values
-from .valProp import ValProp
-from toolTips import inTips
+from values import Values
+from valProp import ValProp
+from Fachwerte.toolTips import inTips
+from Fachwerte.units import inUnits
 
 
 class InputValues(Values):
     '''
-    Saves Input Values in a dictionary. Inherits functionality from values.Fachwerte
+    Saves Input Values in a dictionary. Inherits functionality from values.Materialien
     '''
 
     def __init__(self):
@@ -19,7 +20,7 @@ class InputValues(Values):
         @note: delta and mu are still divided by density. 
         @note: Raw values appear in Services
         '''
-        # Initial Fachwerte
+        # Initial Materialien
         self.params = {'energy': ValProp(15000.0, float, 499., 200001.),        #eV
                        'wavelength': ValProp(0., float),                        #Angstroem
                        'b_v': ValProp(0.060, float, min_value=0.),               #mm
@@ -40,5 +41,9 @@ class InputValues(Values):
                         'W': ValProp(1., float)                                 #mm
                        }
         
+        # add the tooltips to the ValProp objects
         for param in self.params:
-            self.params[param].setTooltip(inTips[param])
+            if param in inTips:
+                self.params[param].setTooltip(inTips[param])
+            if param in inUnits:
+                self.params[param].setUnit(inUnits[param])

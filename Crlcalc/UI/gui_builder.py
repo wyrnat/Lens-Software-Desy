@@ -382,7 +382,7 @@ class BuilderFrame ( wx.Frame ):
 		
 		bSizer46.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
 		
-		Box_MaterialChoices = [ u"Al", u"Al203", u"B", u"Be", u"B4C", u"C", u"Li", u"LiF", u"Mg", u"Ni", u"PC", u"PEEK", u"Si", u"Custom" ]
+		Box_MaterialChoices = []
 		self.Box_Material = wx.Choice( self.Panel_CRLens, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, Box_MaterialChoices, 0 )
 		self.Box_Material.SetSelection( 3 )
 		bSizer46.Add( self.Box_Material, 0, wx.ALL, 5 )

@@ -9,7 +9,7 @@ class ValProp(object):
     '''
 
 
-    def __init__(self, value, mytype, min_value = None, max_value = None, tooltip=None):
+    def __init__(self, value, mytype, min_value = None, max_value = None, tooltip=None, unit=None, guiName = None):
         '''
         Set value and type of the value.
         min_value and max_value are optional
@@ -47,6 +47,22 @@ class ValProp(object):
             self.tooltip = tooltip
         else:
             print "tooltip "+str(tooltip)+" not of type "+str(type(str))
+            
+        #set unit    
+        if unit==None:
+            self.tooltip = ('')
+        elif type(tooltip) == str:
+            self.tooltip = tooltip
+        else:
+            print "unit "+str(guiName)+" not of type "+str(type(str))
+            
+        #set gui Name    
+        if guiName==None:
+            self.guiName = ('')
+        elif type(guiName) == str:
+            self.guiName = guiName
+        else:
+            print "guiName "+str(guiName)+" not of type "+str(type(str))
                 
             
             
@@ -97,7 +113,7 @@ class ValProp(object):
     def getTooltip(self):
         """
         returns value information
-        @return tooltip
+        @return (str) tooltip
         """
         return self.tooltip
     
@@ -108,6 +124,42 @@ class ValProp(object):
         """
         if type(tooltip) == str:
             self.tooltip=tooltip
+            return True
+        return False
+            
+    def getUnit(self):
+        """
+        Get the unit of the value
+        @return: (str) unit
+        """
+        return self.unit
+    
+    def setUnit(self, unit):
+        """
+        Set the unit of the value
+        @param unit: (str) values unit
+        """
+        if type(unit) == str:
+            self.unit = unit
+            return True
+        return False
+    
+    def getGuiName(self):
+        """
+        Get the gui name of the value
+        @return: (str) guiName
+        """
+        return self.guiName
+    
+    def setGuiName(self, guiName):
+        """
+        Set the gui name of the value
+        @param guiName: (str) values gui name
+        """
+        if type(guiName) == str:
+            self.guiName = guiName
+            return True
+        return False
     
     def isValueSettable(self, value):
         """

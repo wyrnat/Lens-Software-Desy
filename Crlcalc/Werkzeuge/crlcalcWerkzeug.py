@@ -10,9 +10,10 @@ import Services.linse as linse
 import Services.diffraction as diffraction
 import Services.spline as spline
 import Services.ioService as ioService
-import Fachwerte.inputValues as inVal
-import Fachwerte.outputValues as outVal
+import Materialien.inputValues as inVal
+import Materialien.outputValues as outVal
 import UI.crlcalcUI as UI
+from Fachwerte import materials
 
 
 
@@ -28,7 +29,7 @@ class CrlcalcWerkzeug(object):
         Constructor for Main Class.
         Create Instances of all used Subclasses and displays the GUI
         '''
-        # instance of values
+        # instances of values
         self.inVal = inVal.InputValues()
         self.outVal = outVal.OutputValues()
         
@@ -39,10 +40,8 @@ class CrlcalcWerkzeug(object):
         #instance of Gui, set tooltips and register as observer of the Gui
         self.gui = UI.Gui()
         self.setTooltip()
+        self.setMaterials()
         self.gui.myobservable.registerObserver(self)
-        
-        #set the Frame title to show actual Version name
-        self.gui.SetTitle("CrlCalc - Version 2.4 (14.4.2016) - Created by Jannik Woehnert")
         
         # instance of spline
         self.spline = None
@@ -58,7 +57,7 @@ class CrlcalcWerkzeug(object):
         
     def observableChanged(self, reason): 
         """
-        Called if gui changed.
+        Called from CrlcalcUI, if gui changed.
         Proceeds with reasonable method due to reason
         @param reason: (String) defines the further procedure
         """
@@ -75,9 +74,9 @@ class CrlcalcWerkzeug(object):
         elif (reason == "onCheckChanged"):
             self.calcCheckChanged()
             self.calcOutput()
-        elif (reason == "onWChanged"):
-            validness = self.calcWChanged()
-            self.FieldFactoring('W', "W has not a valid value", successful=validness)
+        elif (reason == "W" or reason == "R" or reason == "d"):
+            validness = self.calcR0Changed(reason)
+            self.FieldFactoring(reason, reason+" has not a valid value", successful=validness)
         elif (reason == "save"):
             io = ioService.IO
             io.saveToFile(self.inVal, self.outVal)
@@ -98,7 +97,7 @@ class CrlcalcWerkzeug(object):
             self.gui.setFieldValidnessIndicator(myfield, successful)
         if successful == True:
             self.gui.statusBarPop(myfield)
-            if (myfield in ["density","delta","mu"]):
+            if (myfield in ["delta","mu"]):
                 self.calcOutputNoSpline()
             else:
                 self.calcOutput()
@@ -113,6 +112,10 @@ class CrlcalcWerkzeug(object):
             self.gui.setFieldInTooltip(bezeichner, self.inVal.getTooltip(bezeichner))
         for bezeichner in outputFields:
             self.gui.setFieldOutTooltip(bezeichner, self.outVal.getTooltip(bezeichner))
+            
+    def setMaterials(self):
+        self.gui.Box_Material.AppendItems(materials.material_list)
+        self.gui.Box_Material.SetSelection(3)        
             
                                                    
             
@@ -197,6 +200,14 @@ class CrlcalcWerkzeug(object):
         Creates Instance of class spline
         @return bool True, if object is created and data gained from files
         """
+        
+        if materials.material_list[self.inVal.getValue('material_choice')] == "CUSTOM":
+            self.gui.Field_delta.Enable(True)
+            self.gui.Field_mu.Enable(True)
+        else:
+            self.gui.Field_delta.Enable(False)
+            self.gui.Field_mu.Enable(False)
+            
         self.spline = spline.SpLine(self.inVal, self.outVal)
         
         if (self.spline != None and self.spline.checkConstruction()):
@@ -227,6 +238,7 @@ class CrlcalcWerkzeug(object):
             return True
         else:
             return False
+
         
     def calcNewWavelength(self):
         """
@@ -256,7 +268,7 @@ class CrlcalcWerkzeug(object):
             
     def calcR0toW(self):
         """
-        calculate R_0, if R_0 is correlated to W
+        calculate R_0, if R_0 is locked to W
         @return float correlated R_0
         """
         lens = linse.Linse()
@@ -266,19 +278,17 @@ class CrlcalcWerkzeug(object):
         return lens.getR_0Lock(R,W,d)
             
         
-    def calcWChanged(self):
+    def calcR0Changed(self, param):
         """
-        Event function for change of W. If R_0 is locked to W, calculate new R_0
+        Event function for change of parameter locked R0 depends on.
+        If R_0 is locked to W, calculate new R_0.
+        @param param: Key of the changed parameter
         @return bool decides if W value is valid
         """
-        if self.inVal.setValue("W", self.gui.getFieldInputValue("W")) == True:
+        if self.inVal.setValue(param, self.gui.getFieldInputValue(param)) == True:
             if self.inVal.getValue("lockR0toW") == True:
                 self.inVal.setValue("R_0", "%.3g" % self.calcR0toW())
                 self.gui.setFieldInputValue("R_0", self.inVal.getValue("R_0"))
             return True
         else:
             return False
-                     
-        
-    
-        
