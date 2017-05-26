@@ -26,7 +26,7 @@ class Gui(BuilderFrame):
         self.myobservable = observable.Observable()
         
         #set the Frame title to show actual Version name
-        self.SetTitle("CrlCalc - Version 2.5 (29.6.2016) - Created by Jannik Woehnert")
+        self.SetTitle("CrlCalc - Version 2.51 (26.5.2017) - Created by Jannik Woehnert")
         
         #StatusBar
         self.StatusBar.PushStatusText("Ready!")

@@ -97,7 +97,7 @@ class Values(object):
         @param name: (string) the key for the dictionary 'list'
         @return: string object with all information
         """
-        vtype = "type: "+str(self.params[name].getType())
+        vtype = str(self.params[name].getType())
         min_value = "min value: "+str(self.params[name].getMinValue())
         max_value = "max value: "+str(self.params[name].getMaxValue())
         

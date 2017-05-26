@@ -7,6 +7,7 @@ from values import Values
 from valProp import ValProp
 from Fachwerte.toolTips import inTips
 from Fachwerte.units import inUnits
+from Fachwerte.materials import material_list
 
 
 class InputValues(Values):
@@ -31,7 +32,7 @@ class InputValues(Values):
                        'R': ValProp(0.2, float, min_value=0.),                                #mm
                        'R_0': ValProp(0.447, float, min_value=0.),                            #mm
                        'lockR0toW': ValProp(False, bool),
-                       'material_choice': ValProp(3, int, min_value=-1, max_value=14),
+                       'material_choice': ValProp(3, int, min_value=-1, max_value=len(material_list)),
                        'density': ValProp(1., float, min_value=0.),                           #g/cm**3
                        'delta': ValProp(1., float, min_value=0.),                             #cm**3/g
                        'mu': ValProp(1., float, min_value=0.),                                #cm**2/g
@@ -41,7 +42,7 @@ class InputValues(Values):
                         'W': ValProp(1., float)                                 #mm
                        }
         
-        # add the tooltips to the ValProp objects
+        # add tooltips and units to the ValProp objects
         for param in self.params:
             if param in inTips:
                 self.params[param].setTooltip(inTips[param])
